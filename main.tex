@@ -1,0 +1,35 @@
+%%%%%%%%%%%%%%% SPECIFICS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt,twoside]{article}
+\setcounter{secnumdepth}{3}
+\input{other/preamble}
+
+\title{The OPE for Dark Jets}
+\author{Matteo Borrello \thanks{INFN, Florence section \& Physics Department, University of Florence (matteo.borrello@edu.unifi.it)} \and Andrea Clini \thanks{Physics Department, University of Milan (andrea.clini@unimi.it)} }
+\date{\today} 
+
+
+%%%%%%%%%%%%% FRONT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+\input{body/abstract}  
+\tableofcontents
+
+\newpage 
+\input{other/checklist}
+
+%%%%%%%%%%%%% BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{body/introduction}
+%...
+%....
+\include{body/conclusions}
+\include{body/acknowledgments}
+
+%%%%%%%%%%% BACK  %%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\bibliography{other/paperpile}  % add other .bib file if needed 
+\bibliographystyle{alpha} % use 'plain' for numbers only
+
+\end{document}
