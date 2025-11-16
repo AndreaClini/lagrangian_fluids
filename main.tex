@@ -1,6 +1,9 @@
 %%%%%%%%%%%%%%% SPECIFICS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[a4paper,11pt,twoside]{article}
 \setcounter{secnumdepth}{3}
+\newcommand{\MB}[1]{{\color{orange}[MB: \ #1]}}
+\newcommand{\AC}[1]{{\color{blue}[AC: \ #1]}}
+
 \input{other/preamble}
 
 \title{The OPE for Dark Jets}
@@ -22,15 +25,16 @@
 %%%%%%%%%%%%% BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \include{body/introduction}
-%...
-%....
+\include{body/smdis}
+\include{body/dsope}
+\include{body/phenomenology}
 \include{body/conclusions}
 \include{body/acknowledgments}
 
 %%%%%%%%%%% BACK  %%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
-\bibliography{other/paperpile}  % add other .bib file if needed 
-\bibliographystyle{alpha} % use 'plain' for numbers only
+\bibliography{other/bibliography}  % add other .bib file if needed 
+\bibliographystyle{plain} % use 'plain' for numbers only%alpha for letters
 
 \end{document}
