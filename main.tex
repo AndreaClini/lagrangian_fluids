@@ -1,13 +1,15 @@
 %%%%%%%%%%%%%%% SPECIFICS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[a4paper,11pt,twoside]{article}
 \setcounter{secnumdepth}{3}
-\newcommand{\MB}[1]{{\color{orange}[MB: \ #1]}}
-\newcommand{\AC}[1]{{\color{blue}[AC: \ #1]}}
 
-\input{other/preamble}
+\input{other/my_preamble}
+\input{other/extra_preamble.tex}
 
-\title{The OPE for Dark Jets}
-\author{Matteo Borrello \thanks{INFN, Florence section \& Physics Department, University of Florence (matteo.borrello@unifi.it)} \and Andrea Clini \thanks{Physics Department, University of Milan (andrea.clini@unimi.it)} }
+\title{Lagrangian Formulation of Fluids}
+\author{Diego Redigolo \thanks{INFN, Florence section \& Physics Department, University of Florence (diego.redigolo@fi.infn.it)}
+        \and Andrea Clini \thanks{Physics Department, University of Milan (andrea.clini@unimi.it)}
+        \and La Pimpa
+        \and Rambo}
 \date{\today} 
 
 
@@ -25,16 +27,15 @@
 %%%%%%%%%%%%% BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \include{body/introduction}
-\include{body/smdis}
-\include{body/dsope}
-\include{body/phenomenology}
+\include{body/brainstorming}
 \include{body/conclusions}
 \include{body/acknowledgments}
 
 %%%%%%%%%%% BACK  %%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
-\bibliography{other/bibliography}  % add other .bib file if needed 
+\bibliography{other/paperpile}
+%\bibliography{other/extra_bibliography}  % add other .bib file if needed 
 \bibliographystyle{plain} % use 'plain' for numbers only%alpha for letters
 
 \end{document}
