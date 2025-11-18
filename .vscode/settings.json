@@ -46,7 +46,7 @@
   // Controls automatic compilation.
   // "onSave" builds automatically on every save (can be noisy);
   // "never" means you build manually (Ctrl + Alt + B).
-  "latex-workshop.latex.autoBuild.run": "never"
+  "latex-workshop.latex.autoBuild.run": "onSave"
 
   // ────────────────────────────────────────────────
   // END OF CONFIGURATION
