@@ -28,14 +28,14 @@ The action is then, for a generic function $F$,
 \begin{equation}
     S=\int d^4x F(B,Y).
 \end{equation}
-
+%
 The energy momentum tensor is obtained by varying the action wrt the cohordinates
 \begin{align}
 \begin{aligned}
     T^{\mu}{}_{\nu}
     &= \frac{\delta \mathcal{L}}{\delta (\partial_\mu \phi^A)}\,\partial_\nu \phi^A - \mathcal{L}\,\delta^{\mu}{}_{\nu} \\
     &= {\color{red}\bigl(Y \partial_YF - 2B \partial_BF\bigr) u^{\mu} u_{\nu}
-       + \bigl(F - 2B \partial_BF\bigr)\,\delta^{\mu}{}_{\nu}},
+       + \bigl(F - 2B \partial_BF\bigr)\,\delta^{\mu}{}_{\nu}}.
 \end{aligned}
 \end{align}
 %
@@ -101,32 +101,33 @@ the stress tensor becomes
     &+\Big(2B (\partial_BF)- Y(\partial_YF)\Big) (\eta^{\mu\nu} + u^\mu u^\nu)
     - F \eta^{\mu\nu}.
 \end{align}
-Further decomposing \(\partial_\nu\phi^0 = -Y u_\nu + (\text{part orthogonal to }u_\nu)\), the stress tensor reduces to
+Further decomposing \(\partial_\nu\phi^0 = -Y u_\nu + (\text{part orthogonal to }u_\nu)\), the stress tensor reduces to \questiontag{the first line should vanish, probably symmetrizing}
 \begin{align}
     T^{\mu\nu}
-    &= (\partial_YF) u^\mu \big[\partial^\nu \phi^0 + Y u^\nu\big]
-    + (\partial_YF)\partial_\lambda\phi^0\frac{1}{2\sqrt{B}}
+    &= (\partial_YF)\left\{ u^\mu \big[\partial^\nu \phi^0 + Y u^\nu\big]
+    + \partial_\lambda\phi^0\frac{1}{2\sqrt{B}}
     \epsilon^{\lambda\mu\beta\gamma}\,\epsilon_{Ijk}\,
-    \partial_\beta\phi^j\,\partial_\gamma\phi^k\,\partial^\nu \phi^I
+    \partial_\beta\phi^j\,\partial_\gamma\phi^k\,\partial^\nu \phi^I \right\}
     \\
     &+\Big(2B (\partial_BF)- Y(\partial_YF) -F\Big) \eta^{\mu\nu}
     + u^\mu u^\nu 2\Big(B (\partial_BF)- Y(\partial_YF)\Big).
 \end{align}
-We finally get
+Matching the expression to that of a perfect fluid
+\begin{equation}
+    T_{\mu\nu}=(\rho+p)u_\mu u_\nu + p \eta_{\mu\nu},
+\end{equation}
+and contracting with \(u_\mu u_\nu\) and \(\eta_{\mu\nu}\) we find the energy density and pressure as \questiontag{up to an overeall minus sign I am screwing up}
+\begin{equation}
+    \rho = Y \partial_YF - F, \qquad
+    p = F - 2 B \partial_BF.
+\end{equation}
+We finally get the expresion
 \begin{align}
     T^{\mu}{}_{\nu}
     &= \bigl(Y \partial_YF - 2B \partial_BF\bigr) u^{\mu} u_{\nu}
        + \bigl(F - 2B \partial_BF\bigr)\,\delta^{\mu}{}_{\nu}.
 \end{align}
-
 \end{proof}
-Matching the expression to that of a perfect fluid
-\begin{equation}
-    T_{\mu\nu}=(\rho+p)u_\mu u_\nu + p \eta_{\mu\nu},
-\end{equation}
-idenifies the energy density and pressure as
-\begin{equation}
-    \rho = Y \partial_YF - F, \qquad
-    p = F - 2 B \partial_BF.
-\end{equation}
+
+Next we include a nontrivial spacetime metric \(g_{\mu\nu}(x)\).
 
