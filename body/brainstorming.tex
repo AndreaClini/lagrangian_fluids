@@ -129,5 +129,30 @@ We finally get the expresion
 \end{align}
 \end{proof}
 
+
+%----------------------------------------------------------------------------
+\subsection*{Curved background}
+%
 Next we include a nontrivial spacetime metric \(g_{\mu\nu}(x)\).
+The conditions of the $\phi^A(x^\mu)$ being comoving coordinates for the fluid remain the same, so that the 4-velocity is still identifed by demanding
+\begin{equation}
+    \frac{d}{d\tau}\phi^I(x\mu(\tau))=u^\mu \partial_\mu \phi^I=0 \quad I=1,2,3.
+\end{equation}
+The form of the $4$-velocity is then obtained from the Hodge dual as
+\begin{equation}
+    u_\mu dx^\mu \propto \star(d\phi^1 \wedge d\phi^2 \wedge d\phi^3).
+\end{equation}
+Normalizing we get again
+\begin{equation}
+    u^\mu=\frac{1}{6\sqrt{B}}\epsilon^{\mu\alpha\beta\gamma}\epsilon_{ijk}\partial_\alpha \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k,
+\end{equation}
+where now \(\epsilon^{\mu\alpha\beta\gamma}=\frac{1}{\sqrt{-g}}\tilde{\epsilon}^{\mu\alpha\beta\gamma}\) is the Levi-Civita tensor density.
+The invariants are still
+\begin{equation}
+    B:=\det B^{ij}, \quad Y:=u^\mu \partial_\mu \phi^0,
+\end{equation}
+with
+\begin{equation}
+    B^{ij}=\partial_\mu \phi^i \partial_\nu \phi^j g^{\mu\nu}.
+\end{equation}
 
