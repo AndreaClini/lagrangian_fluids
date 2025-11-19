@@ -142,17 +142,57 @@ The form of the $4$-velocity is then obtained from the Hodge dual as
 \begin{equation}
     u_\mu dx^\mu \propto \star(d\phi^1 \wedge d\phi^2 \wedge d\phi^3).
 \end{equation}
-Normalizing we get again
-\begin{equation}
-    u^\mu=\frac{1}{6\sqrt{B}}\epsilon^{\mu\alpha\beta\gamma}\epsilon_{ijk}\partial_\alpha \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k,
-\end{equation}
-where \(\epsilon^{\alpha\beta\gamma\delta}=g^{\lambda\alpha}g^{\mu\beta}g^{\nu\gamma}g^{\rho\delta}{\epsilon}_{\lambda\mu\nu\rho}\) with ${\epsilon}_{\lambda\mu\nu\rho}$ totally antisymmetric Levi--Civita.
-The invariants are still
-\begin{equation}
-    B:=\det B^{ij}, \quad Y:=u^\mu \partial_\mu \phi^0,
-\end{equation}
-with
+Analogously to the flat case we define
 \begin{equation}
     B^{ij}=\partial_\mu \phi^i \partial_\nu \phi^j g^{\mu\nu}.
 \end{equation}
+The invariants are still
+\begin{equation}
+    B:=\det B^{ij}, \quad Y:=u^\mu \partial_\mu \phi^0.
+\end{equation}
+The 4-velocity is again explicitly given by
+\begin{equation}
+    u^\mu=\frac{1}{3!\,\,\sqrt{B}}\epsilon^{\mu\alpha\beta\gamma}\,\,\epsilon_{ijk}\,\,\partial_\alpha \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k,
+\end{equation}
+where \(\epsilon^{\alpha\beta\gamma\delta}=g^{\lambda\alpha}g^{\mu\beta}g^{\nu\gamma}g^{\rho\delta}{\epsilon}_{\lambda\mu\nu\rho}\) with ${\epsilon}_{\lambda\mu\nu\rho}$ totally antisymmetric Levi--Civita.
+%
+\begin{proof}
+For convenience, we temporarily report the explicit computation.
+We have
+\begin{align}
+    d\phi^1 \wedge d\phi^2 \wedge d\phi^3=\epsilon_{ijk} d\phi^i \otimes d\phi^j \otimes d\phi^k = \epsilon_{ijk}\, \partial_\mu \phi^i \partial_\nu \phi^j \partial_\rho \phi^k \,\,dx^\mu \otimes dx^\nu \otimes dx^\rho.
+\end{align}
+Raising indices
+\begin{align}
+    (d\phi^1 \wedge d\phi^2 \wedge d\phi^3)^{\#}
+    &= \epsilon_{ijk}\,\, \partial^\mu \phi^i \partial^\nu \phi^j \partial^\rho \phi^k \,\,\partial_\mu \otimes \partial_\nu \otimes \partial_\rho.
+\end{align}
+Then metric volume form is
+\begin{equation}
+    \Omega=\sqrt{-g}\,\, dx^0 \wedge dx^1 \wedge dx^2 \wedge dx^3= \sqrt{-g}\,\,\epsilon_{\mu\nu\rho\sigma}\,\, dx^\mu \otimes dx^\nu \otimes dx^\rho \otimes dx^\sigma.
+\end{equation}
+Up to normalization, the velocity dual is then
+\begin{align}
+    \tilde{u}_\lambda &= \Omega\big(\,\partial_\lambda,\, (d\phi^1 \wedge d\phi^2 \wedge d\phi^3)^{\#}\big)
+    \\
+    &= \sqrt{-g}\,\, \epsilon_{\lambda\mu\nu\rho} \,\,\epsilon_{ijk}\,\, \partial^\mu \phi^i \partial^\nu \phi^j \partial^\rho \phi^k\,\,
+    dx^\mu \otimes dx^\nu \otimes dx^\rho \otimes dx^\sigma \big(\partial_\lambda, \, \partial_\mu,\, \partial_\nu,\, \partial_\rho\big)
+    \\
+    &= \sqrt{-g}\,\, \epsilon_{\lambda\mu\nu\rho} \,\,\epsilon_{ijk}\,\, \partial^\mu \phi^i \partial^\nu \phi^j \partial^\rho \phi^k.
+\end{align}
+The norm is then
+\begin{align}
+    \tilde{u}_\alpha \,g^{\alpha\lambda}\, \tilde{u}_\lambda
+    &= \left(\sqrt{-g}\right)^2 \underbrace{\,g^{\alpha\lambda}\,\,\epsilon_{\alpha\beta\gamma\delta}\,\, \epsilon_{\lambda\mu\nu\rho}}_{=3!\,\,g_{\mu\beta}\,g_{\nu\gamma}\,g_{\rho\delta}}\,\, \underbrace{\epsilon_{ijk}\,\, \epsilon_{pqr}}_{=3!\,\,\delta_p^1\,\delta_q^2\,\delta_r^3\,\,\epsilon_{ijk}} \,\, \partial^\beta \phi^i \partial^\gamma \phi^j \partial^\delta \phi^k \,\,\, \partial^\mu \phi^p \partial^\nu \phi^q \partial^\rho \phi^r 
+    \\
+    &=
+    \left(\sqrt{-g}\right)^2\,\, (3!)^2 \,\, \epsilon_{ijk}\,\,\partial_\mu\phi^1\partial^\mu\phi^i\,\,\partial_\nu\phi^2\partial^\nu\phi^j\,\,\partial_\rho\phi^3\partial^\rho\phi^k  = \left(\sqrt{-g}\right)^2\,\, (3!)^2 \det B^{ij}.
+\end{align}
+Raising the index of $\tilde{u}$ and normalizing gives the claimed expression.
+\end{proof}
 
+The action is now
+\begin{equation}
+    S=\int d^4x\, \sqrt{-g}\, F(B,Y).
+\end{equation}
+The energy-momentum tensor is obtained by varying wrt the metric \notetag{And we avoid issues with symmetrizing}
