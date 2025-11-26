@@ -1,7 +1,11 @@
+%------------------------------------------------------------------------
 \section*{Brainstorming}
 \addcontentsline{toc}{section}{Brainstorming}
 %------------------------------------------------------------------------------------------
 
+%----------------------------------------------------------------------------
+\subsection*{Flat background: setting \& energy-momentum tensor}
+%-------------------------------------------------------------------------
 
 Let the internal space of the fluid be $\mathcal{M}^{(3)}\simeq \R^3$, including also it proper time we have $\mathcal{M}^{(4)}\simeq \R^{1,3}$ isomorphic to Minkowski spacetime.
 For the moment, we take flat spacetime with metric $\eta_{\mu\nu}=\text{diag}(-1,1,1,1)$, we will later generalize to nonflat metrics.
@@ -131,12 +135,13 @@ We finally get the expresion
 
 
 %----------------------------------------------------------------------------
-\subsection*{Curved background}
+\subsection*{Curved background: setting \& energy-momentum tensor}
+%-------------------------------------------------------------------------
 %
 Next we include a nontrivial spacetime metric \(g_{\mu\nu}(x)\).
 The conditions of the $\phi^A(x^\mu)$ being comoving coordinates for the fluid remain the same, so that the 4-velocity is still identifed by demanding
 \begin{equation}
-    \frac{d}{d\tau}\phi^I(x\mu(\tau))=u^\mu \partial_\mu \phi^I=0 \quad I=1,2,3.
+    \frac{d}{d\tau}\phi^I(x^\mu(\tau))=u^\mu \partial_\mu \phi^I=0 \quad I=1,2,3.
 \end{equation}
 The form of the $4$-velocity is then obtained from the Hodge dual as
 \begin{equation}
@@ -167,20 +172,20 @@ Raising indices
     (d\phi^1 \wedge d\phi^2 \wedge d\phi^3)^{\#}
     &= \epsilon_{ijk}\,\, \partial^\mu \phi^i \partial^\nu \phi^j \partial^\rho \phi^k \,\,\partial_\mu \otimes \partial_\nu \otimes \partial_\rho.
 \end{align}
-Then metric volume form is
+The metric volume form on the whole spacetime is
 \begin{equation}
-    \Omega=\sqrt{-g}\,\, dx^0 \wedge dx^1 \wedge dx^2 \wedge dx^3= \sqrt{-g}\,\,\epsilon_{\mu\nu\rho\sigma}\,\, dx^\mu \otimes dx^\nu \otimes dx^\rho \otimes dx^\sigma.
+    \Omega^g=\sqrt{-g}\,\, dx^0 \wedge dx^1 \wedge dx^2 \wedge dx^3= \sqrt{-g}\,\,\epsilon_{\theta\alpha\beta\gamma}\,\, dx^\theta \otimes dx^\alpha \otimes dx^\beta \otimes dx^\gamma.
 \end{equation}
 Up to normalization, the velocity dual is then
 \begin{align}
-    \tilde{u}_\lambda &= \Omega\big(\,\partial_\lambda,\, (d\phi^1 \wedge d\phi^2 \wedge d\phi^3)^{\#}\big)
+    \tilde{u}_\lambda &= \Omega^g\big(\,\partial_\lambda,\, (d\phi^1 \wedge d\phi^2 \wedge d\phi^3)^{\#}\big)
     \\
-    &= \sqrt{-g}\,\, \epsilon_{\lambda\mu\nu\rho} \,\,\epsilon_{ijk}\,\, \partial^\mu \phi^i \partial^\nu \phi^j \partial^\rho \phi^k\,\,
-    dx^\mu \otimes dx^\nu \otimes dx^\rho \otimes dx^\sigma \big(\partial_\lambda, \, \partial_\mu,\, \partial_\nu,\, \partial_\rho\big)
+    &= \sqrt{-g}\,\, \epsilon_{\theta\alpha\beta\gamma} \,\,\epsilon_{ijk}\,\, \partial^\mu \phi^i \partial^\nu \phi^j \partial^\rho \phi^k\,\,
+    dx^\theta \otimes dx^\alpha \otimes dx^\beta \otimes dx^\gamma  \big(\partial_\lambda, \, \partial_\mu,\, \partial_\nu,\, \partial_\rho\big)
     \\
     &= \sqrt{-g}\,\, \epsilon_{\lambda\mu\nu\rho} \,\,\epsilon_{ijk}\,\, \partial^\mu \phi^i \partial^\nu \phi^j \partial^\rho \phi^k.
 \end{align}
-Using the Levi-Civita \emph{tensor} $\sqrt{-g}\epsilon_{\alpha\beta\gamma\delta}$ (just the volume form) and the $4D$ tensorial identity
+Using the Levi-Civita \emph{tensor} $\sqrt{-g}\,\epsilon_{\alpha\beta\gamma\delta}$ i.e. the volume form, and the tensorial identity (just prove it in normal coordinates)
 \begin{align}
     \sqrt{-g}\,\epsilon_{\alpha\beta\gamma\delta}&\,\sqrt{-g}\, \epsilon_{\lambda\mu\nu\rho} \,\,g^{\alpha\lambda} = -3! \,\, g_{\lambda[\alpha} g_{\beta\mu} g_{\nu\rho]}
     \\
@@ -191,9 +196,9 @@ Using the Levi-Civita \emph{tensor} $\sqrt{-g}\epsilon_{\alpha\beta\gamma\delta}
   - g_{\beta\mu}\, g_{\gamma\rho}\, g_{\delta\nu}
   - g_{\beta\nu}\, g_{\gamma\mu}\, g_{\delta\rho}
   - g_{\beta\rho}\, g_{\gamma\nu}\, g_{\delta\mu}
-\Big).
+\Big),
 \end{align}
-The (negative) norm is then
+the (negative) norm is then
 \begin{align}
     \tilde{u}_\alpha \,g^{\alpha\lambda}\, \tilde{u}_\lambda
     &= \underbrace{\left(\sqrt{-g}\right)^2 \,g^{\alpha\lambda}\,\,\epsilon_{\alpha\beta\gamma\delta}\,\, \epsilon_{\lambda\mu\nu\rho}}_{=-3! \,\, g_{\lambda[\alpha} g_{\beta\mu} g_{\nu\rho]}}\,\, \underbrace{\epsilon_{ijk}\,\, \epsilon_{pqr}}_{=3!\,\,\delta_p^1\,\delta_q^2\,\delta_r^3\,\,\epsilon_{ijk}} \,\, \partial^\beta \phi^i \partial^\gamma \phi^j \partial^\delta \phi^k \,\,\, \partial^\mu \phi^p \partial^\nu \phi^q \partial^\rho \phi^r 
@@ -209,16 +214,16 @@ The action is $S=S_{\mathrm{EH}}+S_{\mathrm{fluid}}$ with
     S_{\mathrm{fluid}}=\int d^4x\, \sqrt{-g}\, F(B,Y),\quad
     S_{\mathrm{EH}}=\frac{1}{16\pi G}\int d^4x\, \sqrt{-g}\, (R-2\Lambda),
 \end{equation}
-where$F$ is an arbitrary function, and we included a possible cosmological constant.
-The energy-momentum tensor is obtained by varying wrt the metric \answertag{And we avoid issues with symmetrizing}
+where $F$ is an arbitrary function, and we included a possible cosmological constant.
+The energy-momentum tensor is obtained varying wrt the metric \answertag{Avoid need to symmetrize}
 \begin{align}
-    T_{\mu\nu}=-\frac{2}{\sqrt{-g}}\frac{\delta S_{\mathrm{fluid}}}{\delta g^{\mu\nu}}={\color{red} \bigl(Y (\partial_Y\!F) - 2 B (\partial_B\!F)\bigr)\,u_\mu u_\nu
-           + \bigl(F + Y (\partial_Y\!F) - 2 B (\partial_B\!F)\bigr)\,g_{\mu\nu}}\,.
+    T_{\mu\nu}:=-\frac{2}{\sqrt{-g}}\frac{\delta S_{\mathrm{fluid}}}{\delta g^{\mu\nu}}={\color{red} \bigl(3Y (\partial_Y\!F) - 2 B (\partial_B\!F)\bigr)\,u_\mu u_\nu
+           + \bigl(F + 2Y (\partial_Y\!F) - 2 B (\partial_B\!F)\bigr)\,g_{\mu\nu}}\,.
 \end{align}
-That is \todotag{Just a guess it is this, finish il conto below}
+That is, matching to the perfect fluid expression, \todotag{Does not match flat case... check!}
 \begin{align}
      \rho = Y (\partial_Y\!F) - F, \qquad
-    p = F+Y (\partial_Y\!F) - 2 B (\partial_B\!F).
+    p = F+ 2 Y (\partial_Y\!F) - 2 B (\partial_B\!F).
 \end{align}
 %
 \begin{proof}
@@ -232,7 +237,7 @@ We have
 \begin{equation}
     \delta \sqrt{-g} = -\frac{1}{2}\, g_{\mu\nu}\,\sqrt{-g}\,\, \delta g^{\mu\nu},
 \end{equation}
-Using the relation $(B^{-1})^{ij} \partial_\mu\phi^i\,\partial_\nu\phi^j=g_{\mu\nu}+u_\mu u_\nu$ (just projection...) we find
+Using the relation $(B^{-1})^{ij} \partial_\mu\phi^i\,\partial_\nu\phi^j=g_{\mu\nu}+u_\mu u_\nu$ (just projection onto $u_\mu$ orthogonal space) we find
 \begin{align}
     \delta B
     &= B (B^{-1})^{ij} \delta B_{ij} = B (B^{-1})^{ij} \partial_\mu\phi^i\,\partial_\nu\phi^j \delta g^{\mu\nu} = B\,\left\{g_{\mu\nu}+u_\mu u_\nu\right\}\,\delta g^{\mu\nu}.
@@ -300,3 +305,86 @@ Matching to the perfect fluid expression $T_{\mu\nu}=(\rho+p)u_\mu u_\nu + p g_{
 \end{proof}
 
 
+%----------------------------------------------------------------------------
+\subsection{Fluctuations: flat case}
+%-------------------------------------------------------------------------
+Following the notation of \cite{DubovskyGregoireNicolisRattazzi_NullEnergyConditionSuperluminalPropagation_2005}, we consider fluctuations around the background solution
+\begin{equation}
+    \bar\phi^0 = t, \quad \bar\phi^i = \alpha x^i,
+\end{equation}
+where \(\alpha\) parametrizes the compression of the fluid.
+We then write
+\begin{equation}
+    \phi^0 = \bar\phi^0 + \pi^0, \quad \phi^i = \bar\phi^i + \pi^i,
+\end{equation}
+and expand the action up to quadratic order in the fluctuations \(\pi^A\).
+%
+We have
+\begin{equation}
+    B^{ij}= \alpha^2 \left(g^{ij} + \partial^i \pi^j + \partial^j \pi^i + \partial_\mu \pi^i \partial^\mu \pi^j\right)
+    = \alpha^2 \left(\delta^{ij} + \partial^i \pi^j + \partial^j \pi^i + \partial_\mu \pi^i \partial^\mu \pi^j\right).
+\end{equation}
+and thus
+\begin{align}
+    B=\det B^{ij}&= \alpha^6 \det\left(\delta^{ij} + \partial^i \pi^j + \partial^j \pi^i + \partial_\mu \pi^i \partial^\mu \pi^j\right).
+\end{align}
+Write $X^{ij}=\partial^i \pi^j + \partial^j \pi^i + \partial_\mu \pi^i \partial^\mu \pi^j$, then
+\begin{align}
+    \det(I+X)=&\exp(\operatorname{tr}\log(I+X))
+    \\
+    &=\exp(\operatorname{tr}X - \tfrac12 \operatorname{tr}X^{2} + \tfrac13 \operatorname{tr}X^{3} + \ldots)
+    \\
+    &= 1 + \operatorname{tr}X + \tfrac12(\operatorname{tr}X)^{2} - \tfrac12\operatorname{tr}X^{2} + O(X^3).
+\end{align}
+Using
+\begin{align}
+    \operatorname{tr}X &= 2 \partial_i \pi^i + \partial_\mu \pi^i \partial^\mu \pi^i,
+    \\
+    \operatorname{tr}X^{2} &= \sum_{ij}(\partial^i\pi^j+\partial^j\pi^i)(\partial^i\pi^j+\partial^j\pi^i) + O(\pi^3)
+    \\
+    &= 2 \partial_i \pi^j \partial_j \pi^i + 2 \partial_i \pi^j \partial_i \pi^j + O(\pi^3),
+    \\
+    (\operatorname{tr}X)^{2} &= 4 (\partial_i \pi^i)^2 + O(\pi^3),
+\end{align}
+we finally get
+\begin{align}
+    B = \alpha^6 \bigg[&1 + 2 \partial_i \pi^i + \partial_\mu \pi^i \partial^\mu \pi^i
+    + 2 (\partial_i \pi^i)^2 - \partial_i \pi^j \partial_j \pi^i - \partial_i \pi^j \partial_i \pi^j
+    + O(\pi^3)\bigg].
+\end{align}
+In turn we have
+\begin{align}
+    B^{-1/2} = \alpha^{-3} \bigg[1 - \partial_i \pi^i - \tfrac12 \partial_\mu \pi^i \partial^\mu \pi^i +\tfrac12 (\partial_i \pi^i)^2 + \tfrac12 \partial_i \pi^j \partial_j \pi^i + \tfrac12 \partial_i \pi^j \partial_i \pi^j 
+    + O(\pi^3)\bigg].
+\end{align}
+%
+Next we expand $u^\mu$ up to quadratic order in the fluctuations.
+We have\todotag{finish}
+\begin{align}
+    u^\mu &= \frac{1}{6\sqrt{B}} \epsilon^{\mu\alpha\beta\gamma} \epsilon_{ijk} \partial_\alpha \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k
+    \\
+    &= \frac{\alpha^3}{6\sqrt{B}} \epsilon^{\mu\alpha\beta\gamma} \epsilon_{ijk} (\delta_\alpha^i + \partial_\alpha \pi^i) (\delta_\beta^j + \partial_\beta \pi^j) (\delta_\gamma^k + \partial_\gamma \pi^k)
+    \\
+    &= \frac{1}{6} \bigg[1 - \partial_i \pi^i - \tfrac12 \partial_\mu \pi^i \partial^\mu \pi^i +\tfrac12 (\partial_i \pi^i)^2 + \tfrac12 \partial_i \pi^j \partial_j \pi^i + \tfrac12 \partial_i \pi^j \partial_i \pi^j 
+    + O(\pi^3)\bigg]
+    \\
+    &\qquad \epsilon^{\mu\alpha\beta\gamma} \epsilon_{ijk} (\delta_\alpha^i + \partial_\alpha \pi^i) (\delta_\beta^j + \partial_\beta \pi^j) (\delta_\gamma^k + \partial_\gamma \pi^k)
+    \\
+    &= \underbrace{\frac{1}{6}\epsilon^{\mu\alpha\beta\gamma} \epsilon_{\alpha\beta\gamma}}_{=\delta_0^\mu}+...
+\end{align}
+Finally the invariant \(Y\) is expanded as \todotag{finish expansion}
+\begin{align}
+    Y = u^\mu \partial_\mu \phi^0 &= u^\mu (\delta_\mu^0 + \partial_\mu \pi^0) 
+    \\
+    &= u^0 + u^\mu \partial_\mu \pi^0
+\end{align}
+
+The action is then expanded up to quadratic order in the fluctuations as
+\begin{align}
+    S &= \int d^4x F(B,Y)
+    \\
+    &= \int d^4x \bigg[ F(\bar{B},\bar{Y}) + \partial_BF(\bar{B},\bar{Y}) \delta B + \partial_YF(\bar{B},\bar{Y}) \delta Y
+    \\
+    &\qquad + \tfrac12 \partial_B^2F(\bar{B},\bar{Y}) (\delta B)^2 + \partial_B\partial_YF(\bar{B},\bar{Y}) \delta B \delta Y + \tfrac12 \partial_Y^2F(\bar{B},\bar{Y}) (\delta Y)^2
+    \bigg].
+\end{align}
