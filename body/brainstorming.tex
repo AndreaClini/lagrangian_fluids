@@ -1,10 +1,9 @@
 %------------------------------------------------------------------------
-\section*{Brainstorming}
-\addcontentsline{toc}{section}{Brainstorming}
+\section{Brainstorming (temporary)}
 %------------------------------------------------------------------------------------------
 
 %----------------------------------------------------------------------------
-\subsection*{Flat background: setting \& energy-momentum tensor}
+\subsection{Flat background: setting \& energy-momentum tensor}
 %-------------------------------------------------------------------------
 
 Let the internal space of the fluid be $\mathcal{M}^{(3)}\simeq \R^3$, including also it proper time we have $\mathcal{M}^{(4)}\simeq \R^{1,3}$ isomorphic to Minkowski spacetime.
@@ -135,7 +134,7 @@ We finally get the expresion
 
 
 %----------------------------------------------------------------------------
-\subsection*{Curved background: setting \& energy-momentum tensor}
+\subsection{Curved background: setting \& energy-momentum tensor}
 %-------------------------------------------------------------------------
 %
 Next we include a nontrivial spacetime metric \(g_{\mu\nu}(x)\).
@@ -372,7 +371,7 @@ We have\todotag{finish}
     \\
     &= \underbrace{\frac{1}{6}\epsilon^{\mu\alpha\beta\gamma} \epsilon_{\alpha\beta\gamma}}_{=\delta_0^\mu}\bigg[1 - \partial_i \pi^i - \tfrac12 \partial_\mu \pi^i \partial^\mu \pi^i +\tfrac12 (\partial_i \pi^i)^2 + \tfrac12 \partial_i \pi^j \partial_j \pi^i + \tfrac12 \partial_i \pi^j \partial_i \pi^j \bigg]
     \\
-    &\qquad -\frac{1}{6}\big(\partial_\ell\pi^\ell\big) 
+    &\qquad +\frac{1}{6}\left[1-\big(\partial_\ell\pi^\ell\big) \right]
     \underbrace{\epsilon_{ijk} \,\left(\epsilon^{\mu\alpha j k}\partial_\alpha\pi^i+\epsilon^{\mu i \beta k}\partial_\beta\pi^j+\epsilon^{\mu i j \gamma}\partial_\gamma\pi^k\right)}_{=3\, \epsilon_{i j k}\,\epsilon^{\mu \alpha j k}\,\partial_\alpha\pi^i \text{ by symmetry}}
     \\
     &\qquad
@@ -381,23 +380,68 @@ We have\todotag{finish}
     \\
     &= \delta_0^\mu \bigg[1 - \partial_i \pi^i - \tfrac12 \partial_\mu \pi^i \partial^\mu \pi^i +\tfrac12 (\partial_i \pi^i)^2 + \tfrac12 \partial_i \pi^j \partial_j \pi^i + \tfrac12 \partial_i \pi^j \partial_i \pi^j \bigg]
     \\
-    &\qquad - \tfrac12 \epsilon^{\mu \alpha j k} \epsilon_{i j k} \partial_\alpha \pi^i \big(\partial_\ell \pi^\ell\big)
+    &\qquad +\tfrac{1}{2}\left[1-\big(\partial_\ell\pi^\ell\big) \right] \epsilon^{\mu \alpha j k} \epsilon_{i j k} \partial_\alpha \pi^i 
     + \tfrac12 \epsilon^{\mu i \beta \gamma} \epsilon_{i j k} \partial_\beta \pi^j \partial_\gamma \pi^k
     + O(\pi^3).
 \end{align}
 Finally the invariant \(Y\) is expanded as \todotag{finish expansion}
 \begin{align}
-    Y = u^\mu \partial_\mu \phi^0 &= u^\mu (\delta_\mu^0 + \partial_\mu \pi^0) 
+    Y &= u^\mu \partial_\mu \phi^0 = u^\mu (\delta_\mu^0 + \partial_\mu \pi^0) 
+    = u^0 + \partial_\mu \pi^0 \left[\delta_0^\mu \big(1-\partial_\ell\pi^\ell \big)+ \tfrac{1}{2} \epsilon^{\mu \alpha j k} \epsilon_{i j k} \partial_\alpha \pi^i \right] + O(\pi^3)
+    \\[6pt]
+    &= 1 - \partial_i \pi^i - \tfrac12 \partial_\mu \pi^i \partial^\mu \pi^i +\tfrac12 (\partial_i \pi^i)^2 + \tfrac12 \partial_i \pi^j \partial_j \pi^i + \tfrac12 \partial_i \pi^j \partial_i \pi^j
     \\
-    &= u^0 + u^\mu \partial_\mu \pi^0
+    &\qquad + \partial_0 \pi^0 \left(1-\partial_\ell\pi^\ell \right) + \tfrac{1}{2} \epsilon_{i j k}\epsilon^{\mu \alpha j k}  \partial_\alpha \pi^i \partial_\mu \pi^0 + O(\pi^3)
+    \\
+    &= 1 + \Big(\partial_0 \pi^0 - \partial_i \pi^i \Big)
+    \\
+    &\qquad +\tfrac12 \bigg( (\partial_i \pi^i)^2 -\partial_\mu \pi^i \partial^\mu \pi^i + \partial_i \pi^j \partial_j \pi^i +\partial_i \pi^j \partial_i \pi^j
+    - 2 \partial_0 \pi^0 \partial_\ell\pi^\ell + \epsilon_{i j k}\epsilon^{\mu \alpha j k}  \partial_\alpha \pi^i \partial_\mu \pi^0 \bigg)
+    + O(\pi^3)
 \end{align}
+In conclusion, separating linear and quadratic parts, we have
+{\small
+\begin{align}
+    B &= \bar{B} + \delta B, \quad
+    \bar{B} = \alpha^6, \quad
+    \delta B^{(1)} =  \alpha^6\, 2\, \partial_i \pi^i,
+    \quad 
+    \delta B^{(2)}= \alpha^6 \Big(\partial_\mu \pi^i \partial^\mu \pi^i
+    + 2 (\partial_i \pi^i)^2 - \partial_i \pi^j \partial_j \pi^i - \partial_i \pi^j \partial_i \pi^j\Big),
+    \\
+    Y &= \bar{Y} + \delta Y, \quad
+    \bar{Y} = 1,
+    \quad \delta Y^{(1)} = \partial_0 \pi^0 - \partial_i \pi^i,
+    \\
+    \delta & Y^{(2)} = \tfrac12 \bigg( (\partial_i \pi^i)^2 -\partial_\mu \pi^i \partial^\mu \pi^i + \partial_i \pi^j \partial_j \pi^i +\partial_i \pi^j \partial_i \pi^j
+    - 2 \partial_0 \pi^0 \partial_\ell\pi^\ell + \epsilon_{i j k}\epsilon^{\mu \alpha j k}  \partial_\alpha \pi^i \partial_\mu \pi^0 \bigg).
+\end{align}
+}
 
 The action is then expanded up to quadratic order in the fluctuations as
 \begin{align}
-    S &= \int d^4x F(B,Y)
-    \\
+    S = \int d^4x F(B,Y)
     &= \int d^4x \bigg[ F(\bar{B},\bar{Y}) + \partial_BF(\bar{B},\bar{Y}) \delta B + \partial_YF(\bar{B},\bar{Y}) \delta Y
     \\
     &\qquad + \tfrac12 \partial_B^2F(\bar{B},\bar{Y}) (\delta B)^2 + \partial_B\partial_YF(\bar{B},\bar{Y}) \delta B \delta Y + \tfrac12 \partial_Y^2F(\bar{B},\bar{Y}) (\delta Y)^2
     \bigg].
 \end{align}
+
+The quadratic part of the expanded lagrangian then reads
+\begin{align}
+    \mathcal{L}^{(2)}& = (\partial_B\bar{F}) \delta B^{(2)} + (\partial_B\bar{F}) \delta Y^{(2)} + \tfrac12 (\partial_B^2\bar{F}) (\delta B^{(1)})^2 + (\partial_{B Y}^2\bar{F}) \delta B^{(1)} \delta Y^{(1)} + \tfrac12 (\partial_Y\bar{F}) (\delta Y^{(1)})^2
+\end{align}
+
+% {\color{gray}
+% The quadratic part of the action can be diagonalized into longitudinal and transverse modes by decomposing
+% \begin{equation}
+%     \pi^i = \pi_L^i + \pi_T^i, \quad
+%     \partial_i \pi_T^i = 0, \quad
+%     \epsilon_{ijk} \partial_j \pi_L^k = 0.
+% \end{equation}
+% The transverse modes have no gradient energy and thus do not propagate, while the longitudinal modes have a speed of sound given by
+% \begin{equation}
+%     c_s^2 = \dots
+% \end{equation}
+% }
+
