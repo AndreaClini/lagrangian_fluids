@@ -314,7 +314,7 @@ Following the notation of \cite{DubovskyGregoireNicolisRattazzi_NullEnergyCondit
 where \(\alpha\) parametrizes the compression of the fluid.
 We then write
 \begin{equation}
-    \phi^0 = \bar\phi^0 + \pi^0, \quad \phi^i = \bar\phi^i + \pi^i,
+    \phi^0 = \bar\phi^0 + \pi^0, \quad \phi^i = \bar\phi^i + \alpha\, \pi^i = \alpha (x^i + \pi^i),
 \end{equation}
 and expand the action up to quadratic order in the fluctuations \(\pi^A\).
 %
@@ -459,7 +459,7 @@ The quadratic part of the expanded lagrangian then reads
 \end{align}
 where we used the background values \(\bar{B} = \alpha^6\) and \(\bar{Y} = 1\).
 
-Inside the action we can integrate by parts the term with antisymmetric epsilon tensors, obtaining
+Inside the action we integrate by parts to get
 {\small
 \begin{align}
     S^{(2)}&=\int d^4x\, \mathcal{L}^{(2)}
@@ -470,31 +470,67 @@ Inside the action we can integrate by parts the term with antisymmetric epsilon 
     &\qquad +
     \bar{Y}(\partial_Y\bar{F}) \tfrac12 \Big(\big(\partial_i \pi^i\big)^2 +\big(\partial_0 \pi^i \partial_0 \pi^i\big) - \greencancel{\big(\partial_j \pi^i \partial_j \pi^i\big)} + \underbrace{\partial_i \pi^j \partial_j \pi^i}_{=(\partial_i \pi^i)^2} + \greencancel{\big(\partial_j \pi^i \partial_j \pi^i\big)}
     - 2 \partial_0 \pi^0 \partial_\ell\pi^\ell + \underbrace{\graycancel{\epsilon_{i j k}\epsilon^{\mu \alpha j k}  \partial_\alpha \pi^i \partial_\mu \pi^0}}_{=0 \text{ by parts + antisym}}\Big)
-    \\[-1.0em]
+    \\[-1.3em]
     &\qquad +
     \bar{B}^2 (\partial_B^2\bar{F}) \,2 \,\big(\partial_i \pi^i\big)^2
     + \tfrac{1}{2}\bar{Y}^2(\partial_{Y}^2\bar{F}) \big(\partial_0 \pi^0 - \partial_i \pi^i\big)^2
     + \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F}) 2\, \partial_i \pi^i \,\,\big(\partial_0 \pi^0 - \partial_i \pi^i\big)\bigg\}
     \\
-    &= \int d^4x \bigg\{\left[-\bar{B} (\partial_B\bar{F}) + \tfrac12 \bar{Y}(\partial_Y\bar{F})\right] \big(\partial_0 \pi^i \partial_0 \pi^i\big)
+    &= \int d^4x \bigg\{ \tfrac12 \bar{Y}^2(\partial_{Y}^2\bar{F}) \,(\partial_0 \pi^0)^2
+    +\bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg]  \big(\partial_0 \pi^0 \partial_\ell \pi^\ell\big)
     \\
-    &\qquad +\bigg[\bar{B} (\partial_B\bar{F}) \,2 + \tfrac12 \bar{Y}(\partial_Y\bar{F}) + \bar{B}^2 (\partial_B^2\bar{F}) \,2\bigg] \,(\partial_i \pi^i)^2
-    \\
-    &\qquad + \tfrac{1}{2}\bar{Y}^2(\partial_{Y}^2\bar{F}) \big(\partial_0 \pi^0 - \partial_i \pi^i\big)^2
-    + \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F}) 2\, \partial_i \pi^i \,\,\big(\partial_0 \pi^0 - \partial_i \pi^i\big)\bigg\}.
+    &\quad +\bigg[ \tfrac12 \bar{Y}(\partial_Y\bar{F}) -\bar{B} (\partial_B\bar{F})\bigg] \big(\partial_0 \pi^i\big)^2  +\bigg[\bar{B} (\partial_B\bar{F}) + 2 \bar{B}^2 (\partial_B^2\bar{F}) + \bar{Y}(\partial_Y\bar{F})
+    +\tfrac12 \bar{Y}^2(\partial_{Y}^2\bar{F}) -2 \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})\bigg] \,(\partial_i \pi^i)^2
+    \bigg\}.
 \end{align}
 }
+The action is not diagonal in the fields \(\pi^0\) and \(\pi^i\).
+The mixing can be removied by solving the EoM for $\pi^0$, which is just an ODE in time.
+Indeed, the field $\pi^0$ seems to be just a constraint, consistently with the $4$-vector nature of $\phi^\mu :=\alpha (x^\mu+\pi^\mu)$ and the normalization enforced by tuning $\alpha$. \todotag{Yet not clear.}
+The EoM for $\pi^0$ reads
+\begin{align}
+    0=\frac{\delta \mathcal{L}^{(2)}}{\delta \pi^0} &= \partial_\mu \left(\frac{\delta \mathcal{L}^{(2)}}{\delta (\partial_\mu \pi^0)}\right)
+    = \partial_0 \left(\bar{Y}^2(\partial_{Y}^2\bar{F}) \, \partial_0 \pi^0
+    +\bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg]  \partial_\ell \pi^\ell \right).
+\end{align}
+Then, for a constant $\gamma$, we have
+\begin{align}
+     \partial_0 \pi^0
+    =-\frac{\bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg]}{\bar{Y}^2(\partial_{Y}^2\bar{F})} \,\, \partial_\ell \pi^\ell +\gamma,
+\end{align}
+and integrating
+\begin{equation}
+    \pi^0= -\int dt\,\, \frac{\bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg]}{\bar{Y}^2(\partial_{Y}^2\bar{F})} \, \partial_\ell \pi^\ell\,\, +\gamma\, t + C.
+\end{equation}
+Since we identified $\phi^0=t+\pi^0$, the integration constant $\gamma$ can be reabsorbed in a rescaling of the background time $t\to (1+\gamma) t$, and for consistency we should take $\gamma=0$.
+In fact, we should have allowed for an arbutrary $\gamma$ \todotag{Not sure, check.} from the beginning by defining $\phi^0=\gamma(t+\pi^0)$ just like for the other variables. 
+The constant $C$ is an irrelevant constant shift in time, and again we set it to zero.
 
-% {\color{gray}
-% The quadratic part of the action can be diagonalized into longitudinal and transverse modes by decomposing
-% \begin{equation}
-%     \pi^i = \pi_L^i + \pi_T^i, \quad
-%     \partial_i \pi_T^i = 0, \quad
-%     \epsilon_{ijk} \partial_j \pi_L^k = 0.
-% \end{equation}
-% The transverse modes have no gradient energy and thus do not propagate, while the longitudinal modes have a speed of sound given by
-% \begin{equation}
-%     c_s^2 = \dots
-% \end{equation}
-% }
-
+Finally, the EoMs for the dynamical fields $\pi^i$ read
+\begin{align}
+    0=\frac{\delta \mathcal{L}^{(2)}}{\delta \pi^i} &= \partial_\mu \left(\frac{\delta \mathcal{L}^{(2)}}{\delta (\partial_\mu \pi^i)}\right)
+    \\
+    &= \partial_0 \left(2\bigg[ \tfrac12 \bar{Y}(\partial_Y\bar{F}) -\bar{B} (\partial_B\bar{F})\bigg] \partial_0 \pi^i\right)
+    \\
+    &\quad + \partial_i \bigg\{2\bigg[\bar{B} (\partial_B\bar{F}) + 2 \bar{B}^2 (\partial_B^2\bar{F}) + \bar{Y}(\partial_Y\bar{F})
+    +\tfrac12 \bar{Y}^2(\partial_{Y}^2\bar{F}) -2 \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})\bigg] \partial_j \pi^j
+    \\
+    &\qquad
+    +2 \bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg] \partial_0 \pi^0 \bigg\}
+    \\
+    &= \partial_0 \left(2\bigg[ \tfrac12 \bar{Y}(\partial_Y\bar{F}) -\bar{B} (\partial_B\bar{F})\bigg] \partial_0 \pi^i\right)
+    \\
+    &\quad + \partial_i \bigg\{2\bigg[\bar{B} (\partial_B\bar{F}) + 2 \bar{B}^2 (\partial_B^2\bar{F}) + \bar{Y}(\partial_Y\bar{F})
+    +\tfrac12 \bar{Y}^2(\partial_{Y}^2\bar{F}) -2 \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})\bigg] \partial_j \pi^j
+    \\
+    &\qquad
+    -2 \bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg] \frac{\bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg]}{\bar{Y}^2(\partial_{Y}^2\bar{F})} \, \partial_\ell \pi^\ell \bigg\}
+    \\
+    &= \partial_0 \left(2\bigg[ \tfrac12 \bar{Y}(\partial_Y\bar{F}) -\bar{B} (\partial_B\bar{F})\bigg] \partial_0 \pi^i\right)
+    \\
+    &\quad + \partial_i \bigg\{2\bigg[\bar{B} (\partial_B\bar{F}) + 2 \bar{B}^2 (\partial_B^2\bar{F}) + \bar{Y}(\partial_Y\bar{F})
+    +\tfrac12 \bar{Y}^2(\partial_{Y}^2\bar{F}) -2 \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})\bigg] \partial_j \pi^j
+    \\
+    &\qquad
+    -2 \bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg]^2 \frac{1}{\bar{Y}^2(\partial_{Y}^2\bar{F})} \, \partial_\ell \pi^\ell \bigg\}.
+\end{align}
