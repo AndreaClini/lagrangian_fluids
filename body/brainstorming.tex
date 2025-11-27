@@ -358,7 +358,7 @@ In turn we have
 \end{align}
 %
 Next we expand $u^\mu$ up to quadratic order in the fluctuations.
-We have\todotag{finish}
+We have
 \begin{align}
     u^\mu &= \frac{1}{6\sqrt{B}} \epsilon^{\mu\alpha\beta\gamma} \epsilon_{ijk} \partial_\alpha \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k
     \\
@@ -384,7 +384,7 @@ We have\todotag{finish}
     + \tfrac12 \epsilon^{\mu i \beta \gamma} \epsilon_{i j k} \partial_\beta \pi^j \partial_\gamma \pi^k
     + O(\pi^3).
 \end{align}
-Finally the invariant \(Y\) is expanded as \todotag{finish expansion}
+Finally the invariant \(Y\) is expanded as 
 \begin{align}
     Y &= u^\mu \partial_\mu \phi^0 = u^\mu (\delta_\mu^0 + \partial_\mu \pi^0) 
     = u^0 + \partial_\mu \pi^0 \left[\delta_0^\mu \big(1-\partial_\ell\pi^\ell \big)+ \tfrac{1}{2} \epsilon^{\mu \alpha j k} \epsilon_{i j k} \partial_\alpha \pi^i \right] + O(\pi^3)
@@ -458,7 +458,7 @@ The quadratic part of the expanded lagrangian then reads
     + \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F}) 2\, \partial_i \pi^i \,\,\big(\partial_0 \pi^0 - \partial_i \pi^i\big) + O(\pi^3),
 \end{align}
 where we used the background values \(\bar{B} = \alpha^6\) and \(\bar{Y} = 1\).
-
+%
 Inside the action we integrate by parts to get
 {\small
 \begin{align}
@@ -505,8 +505,9 @@ and integrating
 Since we identified $\phi^0=t+\pi^0$, the integration constant $\gamma$ can be reabsorbed in a rescaling of the background time $t\to (1+\gamma) t$, and for consistency we should take $\gamma=0$.
 In fact, we should have allowed for an arbutrary $\gamma$ \todotag{Not sure, check.} from the beginning by defining $\phi^0=\gamma(t+\pi^0)$ just like for the other variables. 
 The constant $C$ is an irrelevant constant shift in time, and again we set it to zero.
-
+%
 Finally, the EoMs for the dynamical fields $\pi^i$ read
+{\small
 \begin{align}
     0=\frac{\delta \mathcal{L}^{(2)}}{\delta \pi^i} &= \partial_\mu \left(\frac{\delta \mathcal{L}^{(2)}}{\delta (\partial_\mu \pi^i)}\right)
     \\
@@ -516,21 +517,35 @@ Finally, the EoMs for the dynamical fields $\pi^i$ read
     +\tfrac12 \bar{Y}^2(\partial_{Y}^2\bar{F}) -2 \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})\bigg] \partial_j \pi^j
     \\
     &\qquad
-    +2 \bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg] \partial_0 \pi^0 \bigg\}
+    + \bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg] \partial_0 \pi^0 \bigg\}
     \\
     &= \partial_0 \left(2\bigg[ \tfrac12 \bar{Y}(\partial_Y\bar{F}) -\bar{B} (\partial_B\bar{F})\bigg] \partial_0 \pi^i\right)
     \\
     &\quad + \partial_i \bigg\{2\bigg[\bar{B} (\partial_B\bar{F}) + 2 \bar{B}^2 (\partial_B^2\bar{F}) + \bar{Y}(\partial_Y\bar{F})
     +\tfrac12 \bar{Y}^2(\partial_{Y}^2\bar{F}) -2 \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})\bigg] \partial_j \pi^j
     \\
-    &\qquad
-    -2 \bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg] \frac{\bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg]}{\bar{Y}^2(\partial_{Y}^2\bar{F})} \, \partial_\ell \pi^\ell \bigg\}
-    \\
-    &= \partial_0 \left(2\bigg[ \tfrac12 \bar{Y}(\partial_Y\bar{F}) -\bar{B} (\partial_B\bar{F})\bigg] \partial_0 \pi^i\right)
-    \\
-    &\quad + \partial_i \bigg\{2\bigg[\bar{B} (\partial_B\bar{F}) + 2 \bar{B}^2 (\partial_B^2\bar{F}) + \bar{Y}(\partial_Y\bar{F})
-    +\tfrac12 \bar{Y}^2(\partial_{Y}^2\bar{F}) -2 \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})\bigg] \partial_j \pi^j
-    \\
-    &\qquad
-    -2 \bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg]^2 \frac{1}{\bar{Y}^2(\partial_{Y}^2\bar{F})} \, \partial_\ell \pi^\ell \bigg\}.
+    &\qquad\qquad
+    -  \frac{\bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg]^2}{\bar{Y}^2(\partial_{Y}^2\bar{F})} \, \partial_j \pi^j \bigg\}.
 \end{align}
+}
+%
+That is, for the \emph{longitudinal} part $\pi^i_L := \nabla^i \nabla^{-2} \nabla_j \pi^j$ we have
+\begin{align}
+    \partial_0^2 \pi^i_L
+    &- c_s^2 \nabla^2 \pi^i_L = 0,
+\end{align}
+for the sound speed \todotag{simplify}
+\begin{align}
+    c_s^2
+    &= \frac{\bar{B} (\partial_B\bar{F}) + 2 \bar{B}^2 (\partial_B^2\bar{F}) + \bar{Y}(\partial_Y\bar{F})
+    +\tfrac12 \bar{Y}^2(\partial_{Y}^2\bar{F}) -2 \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})
+    -  \frac{\bigg[2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})-\bar{Y}^2(\partial_{Y}^2\bar{F})\bigg]^2}{2\bar{Y}^2(\partial_{Y}^2\bar{F})}}{ \tfrac12 \bar{Y}(\partial_Y\bar{F}) -\bar{B} (\partial_B\bar{F})}
+    \\
+    &=\dots
+\end{align}
+
+We want to relate this to the equation of state $p=p(\rho,s)$, where $s$ is the entropy density.
+Or better, to the ratio $w:=p/\rho$ and to the adiabatic speed of sound
+\begin{equation}
+    c_a^2 := \left(\frac{\partial p}{\partial \rho}\right)_s.
+\end{equation} 
