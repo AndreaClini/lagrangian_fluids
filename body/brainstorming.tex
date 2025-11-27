@@ -545,9 +545,39 @@ for the sound speed \todotag{simplify}
     \frac{\bar{B} (\partial_B\bar{F}) + 2 \bar{B}^2 (\partial_B^2\bar{F}) 
     -  \frac{\Big(2\,\bar{B}\bar{Y} (\partial_{B Y}^2\bar{F})-\bar{Y}(\partial_{Y}\bar{F})\Big)^2}{2\bar{Y}^2(\partial_{Y}^2\bar{F})}}{ \bar{B} (\partial_B\bar{F}) -\tfrac12 \bar{Y}(\partial_Y\bar{F})}
 \end{align}
+Note that for $F(B,Y)\equiv F(B)$ we recover the barotropic sound speed from \cite{DubovskyGregoireNicolisRattazzi_NullEnergyConditionSuperluminalPropagation_2005}.
 
-We want to relate this to the equation of state $p=p(\rho,s)$, where $s$ is the entropy density.
-Or better, to the ratio $w:=p/\rho$ and to the adiabatic speed of sound
+We want to relate this to the equation of state $p=p(\rho,s)$, where $\sigma$ is the entropy per particle $\sigma=S/N$.
+In particular, we want to highlight to the ratio $w:=p/\rho$ and the adiabatic speed of sound
 \begin{equation}
-    c_a^2 := \left(\frac{\partial p}{\partial \rho}\right)_s.
+    c_a^2 := \left(\frac{\partial p}{\partial \rho}\right)_\sigma.
 \end{equation} 
+
+%----------------------------------------------------------------
+\subsubsection{Thermodynamics (temp)}
+%----------------------------------------------------------------
+
+The Euler formula gives
+\begin{equation}
+    \rho\,V = U = T S - p V + \mu N,
+\end{equation}
+or equivalently dividing by the volume $V$,
+\begin{equation}
+    \rho = -p + T \sigma n + \mu n.
+\end{equation}
+Recall we can identify $\sqrt{B}=n$ as the number density.
+Assuming a fixed number of particles $N$, we have
+\begin{align}
+    -p=\frac{d U }{d V}_{|\sigma,N}= \frac{d (\rho V)}{d V}_{|\sigma,N} = \rho + V \frac{d \rho}{d V}_{|\sigma,N} = \rho + \frac{d \rho}{d \log n}_{|\sigma,N}
+    = \rho + \frac12  \frac{d \rho}{d \log B}_{|\sigma,N}.
+\end{align}
+{\color{red}
+We should identify $Y$ with the entropy per particle $\sigma=S/N$? 
+
+In turn we should compute
+\begin{align}
+    c_a^2 &= \left(\frac{\partial p}{\partial \rho}\right)_\sigma
+    = \frac{\partial p/\partial B_{|\sigma}}{\partial \rho/\partial B_{|\sigma}} \sim \frac{\partial p/\partial B_{|Y}}{\partial \rho/\partial B_{|Y}},
+\end{align}
+and subtract it off the expression for $c_s^2$ to see the non-barotropic offset.
+}
