@@ -433,7 +433,7 @@ The quadratic part of the expanded lagrangian then reads
     \\
     & =
     \alpha^6 (\partial_B\bar{F}) \Big(\partial_\mu \pi^i \partial^\mu \pi^i
-    + 2 (\partial_i \pi^i)^2 - \partial_i \pi^j \partial_j \pi^i - \partial_i \pi^j \partial_i \pi^j\Big)
+    + 2 (\partial_i \pi^i)^2 - \partial_i \pi^j \partial_j \pi^i - \partial_j \pi^i \partial_j \pi^i\Big)
     \\
     &\quad +
     (\partial_Y\bar{F}) \tfrac12 \bigg( (\partial_i \pi^i)^2 -\partial_\mu \pi^i \partial^\mu \pi^i + \partial_i \pi^j \partial_j \pi^i +\partial_i \pi^j \partial_i \pi^j
@@ -446,7 +446,7 @@ The quadratic part of the expanded lagrangian then reads
     \\
     &=
     \bar{B} (\partial_B\bar{F}) \Big(\partial_\mu \pi^i \partial^\mu \pi^i
-    + 2 (\partial_i \pi^i)^2 - \partial_i \pi^j \partial_j \pi^i - \partial_i \pi^j \partial_i \pi^j\Big)
+    + 2 (\partial_i \pi^i)^2 - \partial_i \pi^j \partial_j \pi^i - \partial_j \pi^i \partial_j \pi^i\Big)
     \\
     &\quad +
     \bar{Y}(\partial_Y\bar{F}) \tfrac12 \bigg( (\partial_i \pi^i)^2 -\partial_\mu \pi^i \partial^\mu \pi^i + \partial_i \pi^j \partial_j \pi^i +\partial_i \pi^j \partial_i \pi^j
@@ -460,20 +460,30 @@ The quadratic part of the expanded lagrangian then reads
 where we used the background values \(\bar{B} = \alpha^6\) and \(\bar{Y} = 1\).
 
 Inside the action we can integrate by parts the term with antisymmetric epsilon tensors, obtaining
+{\small
 \begin{align}
-    \int d^4x\, \mathcal{L}^{(2)} 
-    &= \int d^4x \bigg\{\bar{B} (\partial_B\bar{F}) \Big(\partial_\mu \pi^i \partial^\mu \pi^i
-    + 2 (\partial_i \pi^i)^2 - \partial_i \pi^j \partial_j \pi^i - \partial_i \pi^j \partial_i \pi^j\Big)
-    \\[4pt]
-    &\qquad +
-    \bar{Y}(\partial_Y\bar{F}) \tfrac12 \Big((\partial_i \pi^i)^2 -\partial_\mu \pi^i \partial^\mu \pi^i + \partial_i \pi^j \partial_j \pi^i +\partial_i \pi^j \partial_i \pi^j
-    - 2 \partial_0 \pi^0 \partial_\ell\pi^\ell + \epsilon_{i j k}\epsilon^{\mu \alpha j k}  \partial_\alpha \pi^i \partial_\mu \pi^0\Big)
+    S^{(2)}&=\int d^4x\, \mathcal{L}^{(2)}
+    \\ 
+    &= \int d^4x \bigg\{\bar{B} (\partial_B\bar{F}) \Big(-\big(\partial_0 \pi^i \partial_0 \pi^i\big) + \greencancel{\big(\partial_j \pi^i \partial_j \pi^i\big)}
+    + \bluecancel{2} \,(\partial_i \pi^i)^2 - \bluecancel{\big(\partial_i \pi^j \partial_j \pi^i\big)} - \greencancel{\big(\partial_j \pi^i \partial_j \pi^i\big)}\Big)
     \\
+    &\qquad +
+    \bar{Y}(\partial_Y\bar{F}) \tfrac12 \Big(\big(\partial_i \pi^i\big)^2 +\big(\partial_0 \pi^i \partial_0 \pi^i\big) - \greencancel{\big(\partial_j \pi^i \partial_j \pi^i\big)} + \underbrace{\partial_i \pi^j \partial_j \pi^i}_{=(\partial_i \pi^i)^2} + \greencancel{\big(\partial_j \pi^i \partial_j \pi^i\big)}
+    - 2 \partial_0 \pi^0 \partial_\ell\pi^\ell + \underbrace{\graycancel{\epsilon_{i j k}\epsilon^{\mu \alpha j k}  \partial_\alpha \pi^i \partial_\mu \pi^0}}_{=0 \text{ by parts + antisym}}\Big)
+    \\[-1.0em]
     &\qquad +
     \bar{B}^2 (\partial_B^2\bar{F}) \,2 \,\big(\partial_i \pi^i\big)^2
     + \tfrac{1}{2}\bar{Y}^2(\partial_{Y}^2\bar{F}) \big(\partial_0 \pi^0 - \partial_i \pi^i\big)^2
     + \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F}) 2\, \partial_i \pi^i \,\,\big(\partial_0 \pi^0 - \partial_i \pi^i\big)\bigg\}
+    \\
+    &= \int d^4x \bigg\{\left[-\bar{B} (\partial_B\bar{F}) + \tfrac12 \bar{Y}(\partial_Y\bar{F})\right] \big(\partial_0 \pi^i \partial_0 \pi^i\big)
+    \\
+    &\qquad +\bigg[\bar{B} (\partial_B\bar{F}) \,2 + \tfrac12 \bar{Y}(\partial_Y\bar{F}) + \bar{B}^2 (\partial_B^2\bar{F}) \,2\bigg] \,(\partial_i \pi^i)^2
+    \\
+    &\qquad + \tfrac{1}{2}\bar{Y}^2(\partial_{Y}^2\bar{F}) \big(\partial_0 \pi^0 - \partial_i \pi^i\big)^2
+    + \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F}) 2\, \partial_i \pi^i \,\,\big(\partial_0 \pi^0 - \partial_i \pi^i\big)\bigg\}.
 \end{align}
+}
 
 % {\color{gray}
 % The quadratic part of the action can be diagonalized into longitudinal and transverse modes by decomposing
