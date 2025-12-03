@@ -701,28 +701,28 @@ Rearranging we get
     + \frac{1}{Y b} \left(Y \partial^2_{bY} F - \partial_b F - b \partial_b^2 F\right)}{-\frac{1}{Y^2 b} \left(Y \partial_Y F - b \partial_b F\right)
     + \frac{1}{Y b} \left(\partial_Y F + Y \partial_Y^2 F - b \partial^2_{bY} F\right)}
     \\
-    &= \frac{\frac{1}{b}\left(Y \partial_Y F - \redcancel{b \partial_b F}\right)-  \left(Y \partial^2_{bY} F - \redcancel{\partial_b F} - b \partial_b^2 F\right)}
+    &= -\frac{\frac{1}{b}\left(Y \partial_Y F - \redcancel{b \partial_b F}\right)-  \left(Y \partial^2_{bY} F - \redcancel{\partial_b F} - b \partial_b^2 F\right)}
     {\frac{1}{Y} \left(\bluecancel{Y \partial_Y F} - b \partial_b F\right)-  \left(\bluecancel{\partial_Y F} + Y \partial_Y^2 F - b \partial^2_{bY} F\right)}
     \\
     &= \frac{Y\left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)}
-    {b \left( - b \partial_b F - Y^2 \partial_Y^2 F + bY \partial^2_{bY} F\right)}
+    {b \left( b \partial_b F + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right)}
 \end{align}
 Plugging this into the expression for $c_a^2$ we get
 \begin{align}
     c_a^2 &= \frac{\left(\frac{\partial p}{\partial b}\right)_{|Y}+ \left(\frac{\partial p}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}}{\left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}}
     \\
-    &= \frac{- b \partial_b^2 F + \left(\partial_Y F - b \partial^2_{bY} F\right) \frac{Y\left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)}{b \left( - b \partial_b F - Y^2 \partial_Y^2 F + bY \partial^2_{bY} F\right)}}
+    &= \frac{- b \partial_b^2 F + \left(\partial_Y F - b \partial^2_{bY} F\right) \frac{Y\left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)}{b \left(  b \partial_b F + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right)}}
     {\left(Y \partial^2_{bY} F - \partial_b F\right) + \left(Y \partial_Y^2 F\right) \frac{Y\left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)}
-    {b \left( - b \partial_b F - Y^2 \partial_Y^2 F + bY \partial^2_{bY} F\right)}}
+    {b \left(  b \partial_b F + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right)}}
     \\
     &=
     \frac{
-        b^2 \partial_b^2 F \left( b \partial_b F + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right)
+        -b^2 \partial_b^2 F \left( b \partial_b F + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right)
         +
         \left(Y\partial_Y F - bY \partial^2_{bY} F\right)\left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)
     }
     {
-        \left(bY \partial^2_{bY} F - b\partial_b F\right) \left( - b \partial_b F - Y^2 \partial_Y^2 F + bY \partial^2_{bY} F\right) 
+        \left(bY \partial^2_{bY} F - b\partial_b F\right) \left(  b \partial_b F  + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right) 
     + \left(Y^2 \partial_Y^2 F\right) \left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)
     }
 \end{align}
