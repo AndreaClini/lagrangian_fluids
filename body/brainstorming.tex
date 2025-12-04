@@ -743,16 +743,25 @@ For the moment we report the relevant formulas
     \\
     p &= F - b (\partial_b F),\quad \partial_Y p =\partial_YF- b \,\partial^2_{bY} F, \quad \partial_b p = - b \partial_b^2 F,
     \\
-    c_s^2 &= \frac{\big[Y\partial_YF-bY\partial_{bY}^2F\big]^2 -\big(Y^2\partial_Y^2F\big)\big(b^2\partial_b^2 F\big)}{\big(Y^2\partial_Y^2F\big)\big(Y \partial_YF - b \partial_b F\big)},
-    \qquad w:=\frac{p}{\rho}=\frac{F - b (\partial_b F)}{Y (\partial_Y F) - F}
+    w&:=\frac{p}{\rho}=\frac{F - b (\partial_b F)}{Y (\partial_Y F) - F}
+    \\
+    c_s^2 &= \frac{\big[Y\partial_YF-bY\partial_{bY}^2F\big]^2 -\big(Y^2\partial_Y^2F\big)\big(b^2\partial_b^2 F\big)}{\big(Y^2\partial_Y^2F\big)\big(Y \partial_YF - b \partial_b F\big)}
+    \\
+    &= \frac{(Y\partial_Yp)^2 +  (Y\partial_Y\rho)(b\partial_b p)}
+    {(Y\partial_Y\rho)^2\,\,(\rho+p)}
     \\
     c_a^2 &= 
     -\frac{
         \big[Y\partial_Y F- bY\partial_{bY}^2F\big]^2 + b^2 \partial_b^2 F \,\big[ \big(Y \partial_YF - b \partial_b F\big) -Y^2 \partial_Y^2 F  \big]
     }
     {
-        +\big[ bY\partial_{bY}^2F - b\partial_b F\big]^2 - Y^2 \partial_Y^2 F \big[ \big(Y \partial_YF - b \partial_b F\big) + b^2 \partial_b^2 F \big]
-    }. 
+        \big[ bY\partial_{bY}^2F - b\partial_b F\big]^2 - Y^2 \partial_Y^2 F \big[ \big(Y \partial_YF - b \partial_b F\big) + b^2 \partial_b^2 F \big]
+    }
+    \\
+    &= -\frac{(Y\partial_Yp)^2 -(b\partial_b p)\big[(\rho+p) - (Y\partial_Y\rho)\big]}
+    {
+        (b\partial_b \rho)^2 - (Y\partial_Y\rho)\big[(\rho+p) - (b\partial_b p)\big]
+    }.
 \end{align}
 }
 Subtracting from the expression for $c_s^2$ in \eqref{eq:nonbarotropic_formulas}, namely
