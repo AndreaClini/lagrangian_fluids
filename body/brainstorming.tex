@@ -743,7 +743,7 @@ For the moment we report the relevant formulas
     \\
     p &= F - b (\partial_b F),\quad \partial_Y p =\partial_YF- b \,\partial^2_{bY} F, \quad \partial_b p = - b \partial_b^2 F,
     \\
-    w&:=\frac{p}{\rho}=\frac{F - b (\partial_b F)}{Y (\partial_Y F) - F} = -1 + \frac{Y\,b\,\sigma}{\rho}=:w(\rho,\sigma),
+    w&:=\frac{p}{\rho}=\frac{F - b (\partial_b F)}{Y (\partial_Y F) - F} = -1 +\frac{\rho+p}{\rho}=-1 + \frac{Y\partial_Y F - b\partial_b F}{Y\partial_Y F -F} =-1 + \frac{Y\,b\,\sigma}{\rho}=:w(\rho,\sigma),
     \\
     \sigma &= \frac{1}{Y\,b} \, \left(\rho + p\right) = \frac{1}{Y\, b} \, \left(Y \partial_Y F - b \partial_b F\right),
     \\
@@ -782,7 +782,12 @@ With the formula for $w=w(\rho,\sigma)$ above, we can equivalently compute $c_a^
     c_a^2 &= \left(\frac{\partial p}{\partial \rho}\right)_\sigma
     = w + \rho \left(\frac{\partial w}{\partial \rho}\right)_\sigma
     \\
-    &= w + \rho \sigma \left(\frac{\partial (Yb/\rho)}{\partial \rho}\right)_\sigma =\dots
+    &= w + \rho \sigma \left(\frac{\partial (Yb/\rho)}{\partial \rho}\right)_\sigma 
+    = w - \frac{\sigma Y b}{\rho} + \sigma \left(\frac{\partial (Yb)}{\partial \rho}\right)_\sigma
+    \\
+    & = -1 + \sigma \left(\frac{\partial (Yb)}{\partial \rho}\right)_\sigma
+    \\
+    & = 
 \end{align}
 This can be computed using 
 \begin{equation}
