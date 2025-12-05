@@ -771,7 +771,32 @@ Subtracting $c_a^2$ from the expression for $c_s^2$ in \eqref{eq:nonbarotropic_f
 we finally get
 \begin{align}
     c_s^2 - c_a^2
-    &= \dots
+    &= \frac{
+        \big[(Y\partial_Yp)^2 +  (Y\partial_Y\rho)(b\partial_b p)\big] \,
+        \big[(b\partial_b \rho)^2 - (Y\partial_Y\rho)\big((\rho+p) - (b\partial_b p)\big)\big]
+    }{
+        (Y\partial_Y\rho)\,\,(\rho+p) \,
+        \big[(b\partial_b \rho)^2 - (Y\partial_Y\rho)\big((\rho+p) - (b\partial_b p)\big)\big]
+    }
+    \\
+    &\quad +
+    \frac{
+        \big[(Y\partial_Yp)^2 -(b\partial_b p)\big[(\rho+p) - (Y\partial_Y\rho)\big]\big] \,
+        \big[\big(Y \partial_YF - b \partial_b F\big) + b^2 \partial_b^2 F\big]
+    }{
+        \big[ bY\partial_{bY}^2F - b\partial_b F\big]^2 - Y^2 \partial_Y^2 F \big[ \big(Y \partial_YF - b \partial_b F\big) + b^2 \partial_b^2 F \big]
+    }
+    \\
+    &=
+    \frac{
+        (Y\partial_Yp)^2 \, (b\partial_b \rho)^2
+        - (Y\partial_Y\rho)^2 \, (b\partial_b p)^2
+        + (Y\partial_Y\rho)(b\partial_b p)^2 (\rho+p)
+        - (Y\partial_Yp)^2 (Y\partial_Y\rho)(\rho+p)
+    }{
+        (Y\partial_Y\rho)\,\,(\rho+p) \,
+        \big[(b\partial_b \rho)^2 - (Y\partial_Y\rho)\big((\rho+p) - (b\partial_b p)\big)\big]
+    }
 \end{align}
 We can express the difference in terms of $F$ and its derivatives, or in terms of $\rho$, $p$ and their derivatives wrt $b$ and $Y$, using the formulas above.
 We would like to express the offset in terms of $w$ and its derivatives and possibly show it stays positive.
@@ -790,9 +815,10 @@ We would like to express the offset in terms of $w$ and its derivatives and poss
 To show positivity of $c_s^2 - c_a^2$ it might be useful to express everything in terms of thermodynamic potentials like $F=F(T,n)$ or $G=G(T,p)$.
 We have the relations, at fixed number of particles $N=nV$,
 \begin{align}
-    \frac{\partial \rho}{\partial T}_{|n} &= \frac{\partial \rho}{\partial T}_{|V}
-    = \frac{\partial \rho}{\partial S}_{|V} \frac{\partial S}{\partial T}_{|V}
-    = \frac{\partial (U/V)}{\partial S}_{|V} \frac{-\partial \,(\partial_T F)_{|V}}{\partial T}_{|V} = -\frac{T}{V} \, \partial_T^2 F_{|V},
+    T \frac{\partial \rho}{\partial T}_{|n} &= T \frac{\partial \rho}{\partial T}_{|V}
+    = T \frac{\partial \rho}{\partial S}_{|V} \frac{\partial S}{\partial T}_{|V}
+    = T \frac{\partial (U/V)}{\partial S}_{|V} \frac{-\partial \,(\partial_T F)_{|V}}{\partial T}_{|V}
+    = -\frac{T^2}{V} \, \partial_T^2 F_{|V},
     \\
     n \frac{\partial \rho}{\partial n}_{|T} &= - V \frac{\partial \rho}{\partial V}_{|T}
     = - V \frac{\partial (U/V)}{\partial V}_{|T}
@@ -800,11 +826,26 @@ We have the relations, at fixed number of particles $N=nV$,
     =  \rho - \frac{\partial (F+TS)}{\partial V}_{|T}
     =  \rho + p +T \frac{\partial^2 F}{\partial T \partial V},
     \\
-    \frac{\partial P}{\partial T}_{|n} &= \frac{\partial P}{\partial T}_{|V} = \frac{\partial }{\partial T}_{|V}\left(- \frac{\partial F}{\partial V}_{|T}\right) = - \frac{\partial^2 F}{\partial T \partial V},
+    T \frac{\partial P}{\partial T}_{|n} &= T \frac{\partial P}{\partial T}_{|V} = T \frac{\partial }{\partial T}_{|V}\left(- \frac{\partial F}{\partial V}_{|T}\right) = - T \frac{\partial^2 F}{\partial T \partial V},
     \\
     n \frac{\partial P}{\partial n}_{|T} &= -V\frac{\partial P}{\partial V}_{|T} = V \frac{\partial^2 F}{\partial^2 V}_{|T}.
 \end{align}
 Using convexity of $F$  and rewriting $c_s^2 - c_a^2$ in terms of its derivatives we might be able to show positivity...
+
+\begin{align}
+    c_s^2 &= \frac{(T\partial_Tp)^2 +  (T\partial_T\rho)(n\partial_n p)}
+    {(T\partial_T\rho)\,\,(\rho+p)}
+    \\
+    &= c
+    \\
+    c_a^2 &= -\frac{(T\partial_Tp)^2 -(n\partial_n p)\big[(\rho+p) - (T\partial_T\rho)\big]}
+    {
+        (n\partial_n \rho)^2 - (T\partial_T\rho)\big[(\rho+p) - (n\partial_n p)\big]
+    }
+    \\
+    &=c
+\end{align}
+
 }
 \bigskip
 
