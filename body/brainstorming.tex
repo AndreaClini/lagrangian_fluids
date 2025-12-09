@@ -836,14 +836,21 @@ Using convexity of $F$  and rewriting $c_s^2 - c_a^2$ in terms of its derivative
     c_s^2 &= \frac{(T\partial_Tp)^2 +  (T\partial_T\rho)(n\partial_n p)}
     {(T\partial_T\rho)\,\,(\rho+p)}
     \\
-    &= c
+    &= V \cdot \frac{(\partial_V^2F_{|T})(\partial_T^2F_{|V})- \big(\partial_{VT}^2F\big)^2}{(\rho+P)(\partial_T^2F_{|V})}
+    = V\cdot \frac{\det(\partial^2_{V,T} F)}{(\rho+P)(\partial_T^2F_{|V})}
     \\
     c_a^2 &= -\frac{(T\partial_Tp)^2 -(n\partial_n p)\big[(\rho+p) - (T\partial_T\rho)\big]}
     {
         (n\partial_n \rho)^2 - (T\partial_T\rho)\big[(\rho+p) - (n\partial_n p)\big]
     }
     \\
-    &=c
+    &= -\frac{
+        \big( T \partial_{VT}^2F\big)^2 - \big(V \partial_V^2F\big) \big[(\rho+p) + \tfrac{T^2}{V} \partial_T^2F\big]
+    }
+    {
+        \big[(\rho+P)+ T \partial_{VT}^2F\big]^2 +\big(\tfrac{T^2}{V}\partial_T^2F\big) \big[(\rho+p)  - V \partial_V^2F\big]
+    }
+    = check last expr
 \end{align}
 
 }
