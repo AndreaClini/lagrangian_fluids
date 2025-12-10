@@ -1,20 +1,15 @@
 %-----------------------------------------------------
 %=====================================================
-\section{Brainstorming (temporary)}
+\section{Setting \& energy-momentum tensor}
 %=====================================================
 %-------------------------------------------------------
 
 
-
 %============================================================================
-\subsection{Setting \& energy-momentum tensor}
+\subsection{Setting \& energy-momentum tensor: flat background}
 %==========================================================================
 
 
-
-%-------------------------------------------------------------------
-\subsubsection{Setting \& energy-momentum tensor: flat background}
-%-------------------------------------------------------------------
 
 Let the internal space of the fluid be $\mathcal{M}^{(3)}\simeq \R^3$, including also it proper time we have $\mathcal{M}^{(4)}\simeq \R^{1,3}$ isomorphic to Minkowski spacetime.
 For the moment, we take flat spacetime with metric $\eta_{\mu\nu}=\text{diag}(-1,1,1,1)$, we will later generalize to nonflat metrics.
@@ -143,10 +138,12 @@ We finally get the expresion
 \end{proof}
 
 
-%-------------------------------------------------------------------
+
+%===============================================================
 \subsubsection{Setting \& energy-momentum tensor: curved background}
-%-------------------------------------------------------------------
+%=================================================================
 %
+
 Next we include a nontrivial spacetime metric \(g_{\mu\nu}(x)\).
 The conditions of the $\phi^A(x^\mu)$ being comoving coordinates for the fluid remain the same, so that the 4-velocity is still identifed by demanding
 \begin{equation}
@@ -310,9 +307,20 @@ Matching to the perfect fluid expression $T_{\mu\nu}=(\rho+p)u_\mu u_\nu + p g_{
 \end{proof}
 
 
-%-------------------------------------------------------------------
+
+%---------------------------------------------------------
+%=================================================================
+\section{Fluctuations: flat background}
+%=================================================================
+%--------------------------------------------------------------
+
+
+%=================================================================
 \subsection{Fluctuations: flat background}
-%-------------------------------------------------------------------
+%=================================================================
+
+
+
 Following the notation of \cite{DubovskyGregoireNicolisRattazzi_NullEnergyConditionSuperluminalPropagation_2005}, we consider fluctuations around the background solution
 \begin{equation}
     \bar\phi^0 = t, \quad \bar\phi^i = \alpha x^i,
@@ -572,9 +580,13 @@ Then we have
 
 
 
+
+%------------------------------------------------------
 %======================================================
-\subsection{Sound speed and equation of state}
+\section{Sound speed and equation of state}
 %======================================================
+%-----------------------------------------------------
+
 
 Next we want to relate the sound speed $c_s^2$ to the equation of state $p=p(\rho,s)$, where $\sigma$ is the entropy per particle $\sigma:=S/N$.
 In particular, we want to highlight to the ratio $w:=p/\rho$ and the \emph{adiabatic} speed of sound
@@ -582,9 +594,10 @@ In particular, we want to highlight to the ratio $w:=p/\rho$ and the \emph{adiab
     c_a^2 := \left(\frac{\partial p}{\partial \rho}\right)_\sigma.
 \end{equation} 
 
-%---------------------------------------------------------------
-\subsubsection{Barotropic case}
-%---------------------------------------------------------------
+
+%===============================================================
+\subsection{Barotropic case}
+%==================================================================
 
 In the barotropic case $p= w(\rho) \rho$, there is no dependence on $Y$ and the formulas reduce to
 \begin{align}
@@ -617,9 +630,9 @@ Indeed
 
 
 
-%----------------------------------------------------------------
-\subsubsection{Non-barotropic case \& thermodynamics refresher (temp)} \todotag{Conti a caso, ignore}
-%----------------------------------------------------------------
+%==================================================================
+\subsection{Non-barotropic case} 
+%==================================================================
 
 
 The Euler formula gives\footnote{We consider fixed number of particles.}
@@ -766,53 +779,108 @@ In conclusion we have the following formulas
     }.
 \end{align}
 }
-Subtracting $c_a^2$ from the expression for $c_s^2$ in \eqref{eq:nonbarotropic_formulas},
-{\color{red}
-we finally get
+We now compute the difference $c_s^2 - c_a^2$ to see how it depends on the thermodynamic variables and investigate its positivity.
+We can express the difference in terms of $F$ and its derivatives, or in terms of $\rho$, $p$ and their derivatives wrt $b$ and $Y$ using the formulas above.
+
+
+
+
+%--------------------------------------------------------------------------------------
+\subsubsection{Making contact with barotropic case: expression $c_a^2$ in terms of $w$}
+%--------------------------------------------------------------------------------------------
+
+Before computing the difference $c_s^2 - c_a^2$, it is useful to express $c_a^2$ in terms of $w=w(\rho,\sigma)$ as we did in the barotropic case.
+After finding an expression for $\sigma=\sigma(Y,b)$ and in turn for $w=w(\rho,\sigma)=-1+(\sigma Yb)/\rho$ as above, we can equivalently compute $c_a^2$ as
 \begin{align}
-    c_s^2 - c_a^2
-    &= \frac{
-        \big[(Y\partial_Yp)^2 +  (Y\partial_Y\rho)(b\partial_b p)\big] \,
-        \big[(b\partial_b \rho)^2 - (Y\partial_Y\rho)\big((\rho+p) - (b\partial_b p)\big)\big]
-    }{
-        (Y\partial_Y\rho)\,\,(\rho+p) \,
-        \big[(b\partial_b \rho)^2 - (Y\partial_Y\rho)\big((\rho+p) - (b\partial_b p)\big)\big]
-    }
+    c_a^2 &= \left(\frac{\partial p}{\partial \rho}\right)_\sigma = \left(\frac{\partial\big[ w(\rho,\sigma)\,\rho\big]}{\partial \rho}\right)_\sigma
+    = w + \rho \left(\frac{\partial w}{\partial \rho}\right)_\sigma
     \\
-    &\quad +
+    &= w + \rho \sigma \left(\frac{\partial (Yb/\rho)}{\partial \rho}\right)_\sigma 
+    = \underbrace{w - \frac{\sigma Y b}{\rho}}_{=-1} + \sigma \left(\frac{\partial (Yb)}{\partial \rho}\right)_\sigma
+    = -1 + \sigma Y \big(\partial_Y\rho)_\sigma^{-1} + \sigma b \big(\partial_b\rho)_\sigma^{-1}
+\end{align}
+This can be computed using the known expressions in terms of $b$ and $Y$ for
+\begin{align}
+    &\left(\frac{\partial \rho}{\partial b}\right)_{|\sigma}= \left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} ,\quad
+    \left(\frac{\partial \rho}{\partial Y}\right)_{|\sigma}= \left(\frac{\partial \rho}{\partial Y}\right)_{|b}+ \left(\frac{\partial \rho}{\partial b}\right)_{|Y} \left(\frac{\partial b}{\partial Y}\right)_{|\sigma} ,
+\end{align}
+and
+\begin{align}
+    &\left(\frac{\partial Y}{\partial b}\right)_{|\sigma}
+    = \frac{Y\left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)}
+    {b \left( b \partial_b F + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right)}.
+\end{align}
+Equivalently we obtain the same result writing wrt $b$ or $Y$ (we use $b$, but you get of course the same expression using $Y$)
+\begin{align}
+    c_a^2 &= \left(\frac{\partial p}{\partial \rho}\right)_\sigma = w + \rho \left(\frac{\partial w}{\partial \rho}\right)_\sigma = w + \rho\, \frac{ \left(\frac{\partial w}{\partial b}\right)_\sigma}
+    {\left(\frac{\partial \rho}{\partial b}\right)_\sigma}.
+\end{align}
+We recover the same expression as above since
+\begin{align}
+     \rho\, \frac{ \left(\frac{\partial w}{\partial b}\right)_\sigma}
+    {\left(\frac{\partial \rho}{\partial b}\right)_\sigma}
+    &= \rho\,
     \frac{
-        \big[(Y\partial_Yp)^2 -(b\partial_b p)\big[(\rho+p) - (Y\partial_Y\rho)\big]\big] \,
-        \big[\big(Y \partial_YF - b \partial_b F\big) + b^2 \partial_b^2 F\big]
-    }{
-        \big[ bY\partial_{bY}^2F - b\partial_b F\big]^2 - Y^2 \partial_Y^2 F \big[ \big(Y \partial_YF - b \partial_b F\big) + b^2 \partial_b^2 F \big]
+        \sigma\left(\frac{Y}{\rho}+ \frac{b}{\rho} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} - \frac{bY}{\rho^2}\left(\frac{\partial \rho}{\partial b}\right)_\sigma\right)
     }
+    {
+        %\left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}
+        \left(\frac{\partial \rho}{\partial b}\right)_\sigma
+    }
+    =
+    \sigma
+    \frac{ Y+ b \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} }
+    {\left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}}
+    - \frac{\sigma bY}{\rho}
     \\
     &=
-    \frac{
-        (Y\partial_Yp)^2 \, (b\partial_b \rho)^2
-        - (Y\partial_Y\rho)^2 \, (b\partial_b p)^2
-        + (Y\partial_Y\rho)(b\partial_b p)^2 (\rho+p)
-        - (Y\partial_Yp)^2 (Y\partial_Y\rho)(\rho+p)
-    }{
-        (Y\partial_Y\rho)\,\,(\rho+p) \,
-        \big[(b\partial_b \rho)^2 - (Y\partial_Y\rho)\big((\rho+p) - (b\partial_b p)\big)\big]
-    }
+     \sigma Y \left(\frac{\partial \rho}{\partial b}\right)_\sigma^{-1} + \sigma b \left(\frac{\partial \rho}{\partial Y}\right)_\sigma^{-1} -(1+w).
 \end{align}
-We can express the difference in terms of $F$ and its derivatives, or in terms of $\rho$, $p$ and their derivatives wrt $b$ and $Y$, using the formulas above.
-We would like to express the offset in terms of $w$ and its derivatives and possibly show it stays positive.
+This method yields the same expression for $c_a^2$ as the one in \eqref{eq:nonbarotropic_formulas} obtained above. \notetag{Plug in the values and check it}
+We might now explicitate the part of $c_s^2$ involving $w$ in a similar way to compare it more easily with $c_a^2$ and highlight the nonbarotropic effect. \questiontag{This is not doable cf. below.}
 
 
-}
-\bigskip
+{\color{gray}
+%------------------------------------------------------------
+\subsubsection{Failed strategies: $c_s^2 - c_a^2$ via directional derivatives of $w$ \& changing thermodynamic variables $(b,Y)\leftrightarrow (w,\rho)$.}
+%------------------------------------------------------------
 
 
-{\color{violet}
 \noindent
-\textbf{Strategy 1: expressing $c_s^2-c_a^2$ via thermodynamic potentials.}
+\textbf{Failed strategy 1: expressing $c_s^2-c_a^2$ via the EoS and directional derivatives of $w$}
 \smallskip
 
 \noindent
-To show positivity of $c_s^2 - c_a^2$ it might be useful to express everything in terms of thermodynamic potentials like the Helmoltz $A=A(T,n)$ or Gibbs $G=G(T,p)$ free energies.
+From the very definition of the equation of state
+\begin{equation}
+    p= w(\rho,\sigma)\rho, \quad \text{and}\quad c_a^2 := \left(\frac{\partial p}{\partial \rho}\right)_\sigma = w + \rho \left(\frac{\partial w}{\partial \rho}\right)_\sigma,
+\end{equation}
+the nonadiabatic contribution to the sound speed is
+\begin{equation}
+    c_s^2 - c_a^2 = c_s^2 - w - \rho \left(\frac{\partial w}{\partial \rho}\right)_\sigma = \dots
+\end{equation}
+This seems bound to fail, we have fixed a direction $\sigma$ but the other direction is completely unspecified....
+It is like subtracting the directional derivative in one direction from the total differential and demanding what is left.
+Indeed, in the nonbarotropic case $c_s^2$ might only be definable trhough the fluctuations EoM if we want to avoid specifying any direction.
+\bigskip
+
+
+\noindent
+\textbf{Failed strategy 2 (practially impossible in full generality): use $w$ and $\rho$ as your variables.}
+Express everything in terms of these and their derivatives and check something sensible comes out.
+This requires inverting the relations above, which might be cumbersome and nearly impossible in full generality.
+}
+
+
+
+
+
+{\color{violet}
+%------------------------------------------------------
+\subsubsection{Working strategy: expressing $c_s^2-c_a^2$ via thermodynamic potentials.}
+%------------------------------------------------------
+
+To show positivity of $c_s^2 - c_a^2$ it is useful to express everything in terms of thermodynamic potentials like the Helmoltz $A=A(T,n)$ or Gibbs $G=G(T,p)$ free energies.
 We have the relations, at fixed number of particles $N=nV$,
 \begin{align}
     T \frac{\partial \rho}{\partial T}_{|n} &= T \frac{\partial \rho}{\partial T}_{|V}
@@ -887,7 +955,7 @@ Therefore the condition for posivity reads
 \begin{align}
     c_s^2-c_a^2 \geq 0 \quad \Leftrightarrow \quad \frac{(-T^2\partial_T^2A)}{V(\rho+P)}\bigg\{\underbrace{\big(\!-\!T^2\partial_T^2A\big)}_{\geq0}\Big[\big(\partial_V^2A\big)-\tfrac{(\rho+P)}{V}\Big]+\underbrace{\Big[(\rho+P)+T\partial_{TV}^2A\Big]^2}_{\geq 0} \bigg\}\geq 0.
 \end{align}
-We might be able to explicitate this condition further using Maxwell relations.\todotag{do it}
+%
 In non-phantom regime $\rho+P\geq 0$, and assuming the second principle, the condition simplifies to
 \begin{align}
     c_s^2-c_a^2 \geq 0 \quad \Leftrightarrow \quad \underbrace{-T^2\big(\partial_T^2A\big)}_{\geq0}\Big[\underbrace{\big(\partial_V^2A\big)}_{\geq0}-\tfrac{(\rho+P)}{V}\Big]+\underbrace{\Big[(\rho+P)+T\partial_{TV}^2A\Big]^2}_{\geq 0}\geq 0.
@@ -931,10 +999,13 @@ In this case, \emph{assuming the second principle} and thermodynamic stability\f
      \det\big(\partial^2_{T,n}\mathfrak{a}\big) = \big(\partial_T^2\mathfrak{a}\big)\big(\partial_n^2\mathfrak{a}\big) - \big(\partial_{Tn}^2\mathfrak{a}\big)^2 \leq 0,
 \end{align} 
 we immeditaley find that $c_s^2 - c_a^2 \leq 0$ in the phantom regime.
+\smallskip
 
+---------------- IGNORE --------------------------------------------------------
 
-%
-Finally we translate everything into a condition on $F(b,Y)$.
+%----------------------------------------------------------------------
+{\color{gray}
+Finally we translate everything into a condition on $F(b,Y)$. \todotag{Computations likely wrong, redo in terms of $\mathfrak{a}$}
 Recall the relations $b=n$, $Y=T$ and 
 \begin{align}
     \rho&= Y\partial_YF-F,\quad P=F-b\partial_bF,\quad \sigma=\tfrac{\rho+p}{Tn} = \tfrac{Y \partial_Y F - b \partial_b F}{Y b},
@@ -963,93 +1034,9 @@ Finally, the condition on the function $F(b,Y)$ for positivity of $c_s^2 - c_a^2
 \end{align}
 The last expression cannot be simplified any further in terms of the fucntion $F$ and its derivatives: expanding products leads to no cancellation nor hidden structure.
 }
-\bigskip
-
-{\color{forestgreen}
-\noindent
-\textbf{Equivalent computations of $c_a^2$, to make contact with barotropic case.}
-\smallskip
-
-\noindent
-%
-After finding an expression for $\sigma=\sigma(Y,b)$ and in turn for $w=w(\rho,\sigma)=-1+(\sigma Yb)/\rho$ as above, we can equivalently compute $c_a^2$ as
-\begin{align}
-    c_a^2 &= \left(\frac{\partial p}{\partial \rho}\right)_\sigma = \left(\frac{\partial\big[ w(\rho,\sigma)\,\rho\big]}{\partial \rho}\right)_\sigma
-    = w + \rho \left(\frac{\partial w}{\partial \rho}\right)_\sigma
-    \\
-    &= w + \rho \sigma \left(\frac{\partial (Yb/\rho)}{\partial \rho}\right)_\sigma 
-    = \underbrace{w - \frac{\sigma Y b}{\rho}}_{=-1} + \sigma \left(\frac{\partial (Yb)}{\partial \rho}\right)_\sigma
-    = -1 + \sigma Y \big(\partial_Y\rho)_\sigma^{-1} + \sigma b \big(\partial_b\rho)_\sigma^{-1}
-\end{align}
-This can be computed using the known expressions in terms of $b$ and $Y$ for
-\begin{align}
-    &\left(\frac{\partial \rho}{\partial b}\right)_{|\sigma}= \left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} ,\quad
-    \left(\frac{\partial \rho}{\partial Y}\right)_{|\sigma}= \left(\frac{\partial \rho}{\partial Y}\right)_{|b}+ \left(\frac{\partial \rho}{\partial b}\right)_{|Y} \left(\frac{\partial b}{\partial Y}\right)_{|\sigma} ,
-\end{align}
-and
-\begin{align}
-    &\left(\frac{\partial Y}{\partial b}\right)_{|\sigma}
-    = \frac{Y\left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)}
-    {b \left( b \partial_b F + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right)}.
-\end{align}
-Equivalently we obtain the same result writing wrt $b$ or $Y$ (we use $b$, but you get of course the same expression using $Y$)
-\begin{align}
-    c_a^2 &= \left(\frac{\partial p}{\partial \rho}\right)_\sigma = w + \rho \left(\frac{\partial w}{\partial \rho}\right)_\sigma = w + \rho\, \frac{ \left(\frac{\partial w}{\partial b}\right)_\sigma}
-    {\left(\frac{\partial \rho}{\partial b}\right)_\sigma}.
-\end{align}
-We recover the same expression as above since
-\begin{align}
-     \rho\, \frac{ \left(\frac{\partial w}{\partial b}\right)_\sigma}
-    {\left(\frac{\partial \rho}{\partial b}\right)_\sigma}
-    &= \rho\,
-    \frac{
-        \sigma\left(\frac{Y}{\rho}+ \frac{b}{\rho} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} - \frac{bY}{\rho^2}\left(\frac{\partial \rho}{\partial b}\right)_\sigma\right)
-    }
-    {
-        %\left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}
-        \left(\frac{\partial \rho}{\partial b}\right)_\sigma
-    }
-    =
-    \sigma
-    \frac{ Y+ b \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} }
-    {\left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}}
-    - \frac{\sigma bY}{\rho}
-    \\
-    &=
-     \sigma Y \left(\frac{\partial \rho}{\partial b}\right)_\sigma^{-1} + \sigma b \left(\frac{\partial \rho}{\partial Y}\right)_\sigma^{-1} -(1+w).
-\end{align}
-This method yields the same expression for $c_a^2$ as above. \todotag{Plug in the values and check it}
-We should however express $c_s^2$ in a similar fashion to compare them more easily \& highlight the nonbarotropic effect. \todotag{This might be the key, do it }
-}
-\bigskip
-
-
-
-{\color{forestgreen}
-\noindent
-\textbf{Strategy 2: expressing $c_s^2-c_a^2$ via the EoS.}
-\smallskip
-
-\noindent
-From the very definition of the equation of state
-\begin{equation}
-    p= w(\rho,\sigma)\rho, \quad \text{and}\quad c_a^2 := \left(\frac{\partial p}{\partial \rho}\right)_\sigma = w + \rho \left(\frac{\partial w}{\partial \rho}\right)_\sigma,
-\end{equation}
-the nonadiabatic contribution to the sound speed is
-\begin{equation}
-    c_s^2 - c_a^2 = c_s^2 - w - \rho \left(\frac{\partial w}{\partial \rho}\right)_\sigma = \dots
-\end{equation}
-This seems bound to fail, we have fixed a direction $\sigma$ but the other direction is completely unspecified....
-It is like subtracting the directional derivative in one direction from the total differential and demanding what is left.
-Indeed, in the nonbarotropic case $c_s^2$ might only be definable trhough the fluctuations EoM if we want to avoid specifying any direction.
 }
 
-{\color{orange}
-\noindent
-\textbf{Strategy 3 (the only possibly working): use $w$ and $\rho$ as your variables.}
-Express everything in terms of these and their derivatives and check something sensible comes out.
-This requires inverting the relations above, which might be cumbersome and nearly impossible in full generality.
-\smallskip
 
-\noindent
-}
+
+
+
