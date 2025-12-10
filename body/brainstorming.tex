@@ -883,16 +883,12 @@ Taking the difference we have
     }
 \end{align}
 The second principle of  thermodynamics implies that $\partial_T^2A=-\partial_TS\leq 0$.
-Therefore, assuming only the second principle, the condition for posivity reads
+Therefore the condition for posivity reads
 \begin{align}
-    c_s^2-c_a^2 \geq 0 \quad \Leftrightarrow \quad \frac{1}{(\rho+P)}\bigg\{\underbrace{-T^2\big(\partial_T^2A\big)}_{\geq0}\Big[\big(\partial_V^2A\big)-\tfrac{(\rho+P)}{V}\Big]+\underbrace{\Big[(\rho+P)+T\partial_{TV}^2A\Big]^2}_{\geq 0} \bigg\}\geq 0.
-\end{align}
-This could equivalently be expressed in terms of the specific free-energy $\mathfrak{a}=A/V$ as
-\begin{align}
-    c_s^2-c_a^2 \geq 0 \quad \Leftrightarrow \quad \cdots
+    c_s^2-c_a^2 \geq 0 \quad \Leftrightarrow \quad \frac{(-T^2\partial_T^2A)}{V(\rho+P)}\bigg\{\underbrace{\big(\!-\!T^2\partial_T^2A\big)}_{\geq0}\Big[\big(\partial_V^2A\big)-\tfrac{(\rho+P)}{V}\Big]+\underbrace{\Big[(\rho+P)+T\partial_{TV}^2A\Big]^2}_{\geq 0} \bigg\}\geq 0.
 \end{align}
 We might be able to explicitate this condition further using Maxwell relations.\todotag{do it}
-In non-phantom regime $\rho+P\geq 0$ the condition simplifies to
+In non-phantom regime $\rho+P\geq 0$, and assuming the second principle, the condition simplifies to
 \begin{align}
     c_s^2-c_a^2 \geq 0 \quad \Leftrightarrow \quad \underbrace{-T^2\big(\partial_T^2A\big)}_{\geq0}\Big[\underbrace{\big(\partial_V^2A\big)}_{\geq0}-\tfrac{(\rho+P)}{V}\Big]+\underbrace{\Big[(\rho+P)+T\partial_{TV}^2A\Big]^2}_{\geq 0}\geq 0.
 \end{align}
@@ -901,9 +897,44 @@ Also note that imposing further thermodynamic, namely \emph{positive compressibi
     -\frac{\partial P}{\partial V}_{|T} = \frac{\partial^2 A}{\partial V^2}_{|T} \geq 0.
 \end{equation}
 
+The above condition is better expressed in terms of the specific free-energy $\mathfrak{a}=A/V$.
+Using the relations
+\begin{align}
+    T^2\partial_T^2 A_{|V} = V T^2 \partial_T^2 \mathfrak{a}_{|n},\quad
+    \partial_V^2 A_{|T} = \frac{1}{V}  n^2 \partial_n^2 \mathfrak{a},\quad
+    T\partial_{TV}^2 A = T \partial_T \mathfrak{a} - nT \partial_{nT}^2 \mathfrak{a},
+\end{align}
+and the thermodynamic relation and Euler formula
+\begin{align}
+    T\partial_T\mathfrak{a}_{\mid n} &= T\partial_T\left(\tfrac{A}{V}\right)_{\mid V} = -T\frac{S}{V}= -Tn\sigma = -(\rho+P),
+\end{align}
+we read the condition $c_s^2 - c_a^2 \geq 0$ in full generality
+{\small
+\begin{align}
+    &\frac{(-T^2\partial_T^2A)}{V(\rho+P)}\bigg\{\Big[(\rho+P)+T\partial_{TV}^2A\Big]^2 -T^2\big(\partial_T^2A\big)\Big[\big(\partial_V^2A\big)-\tfrac{(\rho+P)}{V}\Big] \bigg\}
+    \\
+    &=
+    \frac{(-T^2\partial_T^2\mathfrak{a})}{(\rho+P)}\bigg\{\Big[\underbrace{(\rho+P)+T\partial_{T}\mathfrak{a}}_{=0}-Tn\partial^2_{Tn}\mathfrak{a}\Big]^2 -T^2\big(\partial_T^2\mathfrak{a}\big)\Big[n^2\partial_n^2\mathfrak{a}-(\rho+P)\Big] \bigg\}
+    \\
+    &=
+    \frac{(-T^2\partial_T^2\mathfrak{a})}{(\rho+P)}\bigg\{(T^2n^2)\underbrace{\Big[\big(\partial_{Tn}^2\mathfrak{a}\big)^2-\big(\partial_T^2\mathfrak{a}\big)\big(\partial_n^2\mathfrak{a}\big)\Big]}_{=-\det\big(\partial^2_{T,n}\mathfrak{a}\big)\geq0}-\underbrace{\big(-T^2\partial_T^2\mathfrak{a}\big)}_{=T^2n\,\partial_T\sigma_{\mid n}\geq0}\,(\rho+P)\bigg\} \geq 0
+\end{align}
+}
+The expression can be written in terms of $\mathfrak{a}$ only using $\rho+P=Tn\sigma= -T\partial_T\mathfrak{a}_{\mid n}$ so that
+\begin{align}
+    \frac{(-T^2\partial_T^2\mathfrak{a})}{(-T\partial_T\mathfrak{a}_{\mid n})}\bigg\{(T^2n^2)\underbrace{\Big[\big(\partial_{Tn}^2\mathfrak{a}\big)^2-\big(\partial_T^2\mathfrak{a}\big)\big(\partial_n^2\mathfrak{a}\big)\Big]}_{=-\det\big(\partial^2_{T,n}\mathfrak{a}\big)\geq0}-\underbrace{\big(-T^2\partial_T^2\mathfrak{a}\big)}_{=T^2n\,\partial_T\sigma_{\mid n}\geq0}\,\underbrace{\big(-T\partial_T\mathfrak{a}_{\mid n}\big)}_{=Tn\sigma}\bigg\} \geq 0.
+\end{align}
+In particular, this might completely resolve the question about the `beyond-phantom regime' $\rho+P<0$.
+In this case, \emph{assuming the second principle} and thermodynamic stability\footnote{The latter might be unjustified if we postulate $\rho+P<0$. Vacuum energy respects it since $P=-\rho=\texttt{const}$.}
+\begin{align}
+     -\partial_T^2\mathfrak{a}=\frac{\partial_TS_{\mid V}}{V}\geq 0, \qquad
+     \det\big(\partial^2_{T,n}\mathfrak{a}\big) = \big(\partial_T^2\mathfrak{a}\big)\big(\partial_n^2\mathfrak{a}\big) - \big(\partial_{Tn}^2\mathfrak{a}\big)^2 \leq 0,
+\end{align} 
+we immeditaley find that $c_s^2 - c_a^2 \leq 0$ in the phantom regime.
+
 
 %
-Now we now translate everything into a condition on $F(b,Y)$.
+Finally we translate everything into a condition on $F(b,Y)$.
 Recall the relations $b=n$, $Y=T$ and 
 \begin{align}
     \rho&= Y\partial_YF-F,\quad P=F-b\partial_bF,\quad \sigma=\tfrac{\rho+p}{Tn} = \tfrac{Y \partial_Y F - b \partial_b F}{Y b},
@@ -918,18 +949,19 @@ Using $\partial_V= -\frac{b}{V}\partial_b$ and $\partial_T=\partial_Y$ we also h
     \\
     T\partial_{TV}^2 A &= bY\partial_b\partial_Y F -Y\partial_Y F - Yb^2 \partial_b^2\partial_YF.
 \end{align}
-Finally, the condition on the function $F(b,Y)$ for positivity of $c_s^2 - c_a^2\geq 0$ reads \todotag{Check exp for F}
+Finally, the condition on the function $F(b,Y)$ for positivity of $c_s^2 - c_a^2\geq 0$ reads
 \begin{align}
-    \frac{1}{\rho+P}&\bigg\{\Big[(\rho+P)+T\partial_{TV}^2A\Big]^2\underbrace{-T^2\big(\partial_T^2A\big)}_{\geq 0}\Big[\underbrace{\partial_V^2A}_{\geq 0}-\tfrac{\rho+P}{V}\Big]\bigg\}
+    &\frac{1}{\rho+P}\bigg\{\Big[(\rho+P)+T\partial_{TV}^2A\Big]^2\underbrace{-T^2\big(\partial_T^2A\big)}_{\geq 0}\Big[\underbrace{\partial_V^2A}_{\geq 0}-\tfrac{\rho+P}{V}\Big]\bigg\}
     \\
     &= \frac{
     \Big[b\partial_bF - bY\partial_b\partial_YF+b^2Y\partial_b^2\partial_YF\Big]^2
-    -\big(Y^2b\partial_Y^2\partial_bF - Y^2\partial_Y^2F\big)
+    -\big(bY^2\partial_b\partial_Y^2F - Y^2\partial_Y^2F\big)
     \cdot
-    \big(b\partial_bF + b^2\partial_b^2F+b^3\partial_b^3F\big)
+    \big(b\partial_bF + b^2\partial_b^2F+b^3\partial_b^3F-Y\partial_YF\big)
     }
-    {\partial_YF-b\partial_bF} \geq 0.
+    {Y\partial_YF-b\partial_bF} \geq 0.
 \end{align}
+The last expression cannot be simplified any further in terms of the fucntion $F$ and its derivatives: expanding products leads to no cancellation nor hidden structure.
 }
 \bigskip
 
