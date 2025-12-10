@@ -1,0 +1,179 @@
+\documentclass[a4paper,11pt]{article}
+%\pdfoutput=1 
+
+\usepackage{graphicx}  % needed for figures
+\usepackage{dcolumn}   % needed for some tables
+\usepackage{bm,relsize}        % for math
+\usepackage{amssymb, amsmath}
+\usepackage{textcomp}
+\usepackage{wasysym}
+\usepackage{slashed}
+\usepackage{caption, subcaption}
+\usepackage{multirow}
+\usepackage{gensymb}
+\usepackage{subcaption}
+%\usepackage[table]{xcolor}
+\usepackage{colortbl}
+\usepackage{booktabs} % opzionale ma utile per tabelle più eleganti
+\usepackage{tabularx}
+\definecolor{headergray}{gray}{0.9}
+\definecolor{rowgray}{gray}{0.97}
+
+
+\usepackage[nolist, nohyperlinks]{acronym}
+
+
+\usepackage{lipsum, color}
+\usepackage[dvipsnames,svgnames,table]{xcolor}
+\usepackage{braket}
+\usepackage{jheppub} 
+\usepackage{booktabs}
+\usepackage{pdflscape}
+\usepackage[utf8]{inputenc} 
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\usepackage{mathrsfs}
+\usepackage{bm,amssymb,slashed,graphicx,multirow,soul,mathtools,xspace,array,tikz,amsmath, gensymb}
+\usetikzlibrary{patterns}
+\usepackage{siunitx} 
+\usepackage{float}   
+\usepackage{cancel}
+\allowdisplaybreaks
+\usepackage{ bbold }
+%\usepackage{subfigure}
+\usepackage{caption,subcaption}
+\usepackage{hyperref}
+\usepackage{colortbl}
+\usepackage{tcolorbox}
+
+\usepackage{comment}
+
+\usepackage[capitalise, english]{cleveref}
+
+\definecolor{nicered}{rgb}{0.7,0.1,0.1}
+\definecolor{nicegreen}{rgb}{0.1,0.5,0.1}
+\definecolor{violet}{rgb}{0.7,0.3,0.3}
+\hypersetup{colorlinks,citecolor= nicegreen,linkcolor= nicered}
+
+\setcounter{tocdepth}{2}
+
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\ov}{\overline}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\g}{\gamma}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+
+\newcommand{\eventname}{KM3-230213A}
+\newcommand{\kmn}{KM3NeT}
+\newcommand{\ic}{IceCube}
+
+\newcommand{\nn}{\nonumber}
+\newcommand{\TeV}{\si{\tera\electronvolt}}
+\newcommand{\GeV}{\si{\giga\electronvolt}}
+\newcommand{\PeV}{\si{\peta\electronvolt}}
+\newcommand{\Br}{\text{Br}}
+
+\newcommand {\vek}[1]{\mathbf{#1}}
+\newcommand {\E}[1]{\times 10^{#1}}	% scientific exponent notation
+\newcommand {\e}[1]{\mathrm{~#1}}       % units
+\newcommand{\re}[0]{\mathrm{Re}\,}
+\newcommand{\im}[0]{\mathrm{Im}\,}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\dd}[0]{\mathrm{d}}
+\newcommand{\eq}[1]{\begin{equation} #1 \end{equation}}
+\newcommand{\beq}{\begin{equation} }
+\newcommand{\eeq}{\end{equation}} 
+\newcommand{\bi}{\begin{itemize} }
+\newcommand{\ei}{\end{itemize} }
+\newcommand{\EeV}{\mathrm{EeV}}
+\newcommand{\TT}{\mathcal{T}}
+
+\newcommand{\deriv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\totalderiv}[2]{\frac{d #1}{d #2}}
+
+\definecolor{Red}{rgb}{1.,0.,0.}
+\definecolor{Grn}{rgb}{0.,0.75,0.}
+\definecolor{Blu}{rgb}{0.,0.,1.}
+\definecolor{Pink}{rgb}{1,0.08,0.58}
+\newcommand{\Red}[1]{{\color{nicered}{#1}}}
+\newcommand{\Grn}[1]{{\color{nicegreen}{#1}}}
+\newcommand{\Blu}[1]{{\color{niceblue}{#1}}}        
+   
+
+
+\DeclareMathOperator{\diag}{diag}   
+\let\Re\relax
+\DeclareMathOperator{\Re}{Re}
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Tr}{Tr}
+\newcommand{\lrpartial}{\negthickspace\stackrel{\leftrightarrow}{\partial}\negthickspace{}}
+\newcommand{\lrPartial}{\negthickspace\stackrel{\leftrightarrow}{D}\negthickspace{}}
+
+\usepackage[T1]{fontenc} % if needed
+
+\usepackage{amsmath,amssymb,epsfig,color,slashed}
+\allowdisplaybreaks  
+
+\setcounter{MaxMatrixCols}{20}
+
+\newcommand*{\I}{\mathrm{i}}
+
+\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+
+
+
+\definecolor{verdino}{rgb}{0.66, 0.89, 0.63}
+
+%\bibliographystyle{JHEP}
+
+\newcommand{\DR}[1]{{\color{blue}[DR: #1]}}
+\newcommand{\CA}[1]{{\color{nicered}[CA: #1]}}
+
+\begin{document} 
+
+\begin{acronym}
+\acro{IC}{IceCube}
+\end{acronym}
+
+%\preprint{}
+
+
+
+\title{Accelerating the Universe with non-barotropic fluids}
+
+\author[a]{Andrea Clini,}
+\author[b]{Diego Redigolo,}
+
+\affiliation[a]{Dipartimento di Fisica “Aldo Pontremoli”, Universit`a degli Studi di Milano,
+Via Celoria 16, 20133 Milan, Italy}
+\affiliation[b]{INFN Sezione di Firenze, Via G. Sansone 1, I-50019 Sesto Fiorentino, Italy}
+        
+\date{\today} 
+
+
+\abstract{We study non barotropic fluids which allow for accelerated expansion from the effective field theory perspective.}
+
+\maketitle
+
+
+
+%%%%%%%%%%%%% FRONT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+Which fluid allows for accelerated expansion? Assuming a single fluid dominates the energy density of the Universe we can relate the acceleration to its equation of state 
+\begin{equation}
+\frac{\ddot{a}}{a}=-\frac{4\pi G_N\rho}{3}(1+3w)    
+\end{equation}
+where $w=p/\rho$ is the equation of stare. This equation tells us the well known thing that having accelerated expansion implies $w<-1/3$. We also need to check that the accelerating background is stable which amounts to exclude the presence of 
+
+
+
+
+
+
+\end{document}
